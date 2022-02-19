@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: Dana;
+  src: url(./Assets//Fonts/Dana-FaNum-Medium.ttf);
+}
+body {
+  font-family: Dana;
+}
