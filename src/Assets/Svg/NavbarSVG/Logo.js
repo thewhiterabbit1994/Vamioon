@@ -1,7 +1,7 @@
 export default () => (
   <svg
-    width="60"
-    height="22"
+    width="4.6875vw"
+    height="1.71875vw"
     viewBox="0 0 60 22"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

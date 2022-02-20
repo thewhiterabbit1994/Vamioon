@@ -26,7 +26,7 @@ const MiddleSlide = () => {
         licenseKey={"YOUR_KEY_HERE"}
         navigation
         navigationPosition={"left"}
-        scrollingSpeed={1500}
+        scrollingSpeed={1000}
         setResponsive={true}
         render={({ state, fullpageApi }) => {
           return (
@@ -50,7 +50,7 @@ const MiddleSlide = () => {
                       </p>
                     </div>
                     <div className="flex items-center mt-[2vw]">
-                      <div className="flex justify-center items-center w-[35px] h-[35px] bg-[#b3dcd7] rounded-[10px] ">
+                      <div className="flex justify-center items-center w-[2.734375vw] h-[2.734375vw] bg-[#b3dcd7] rounded-[10px] ">
                         <Money />
                       </div>
                       <p className="text-[1vw] mr-3">
@@ -77,7 +77,7 @@ const MiddleSlide = () => {
                       </p>
                     </div>
                     <div className="flex items-center mt-[2vw]">
-                      <div className="flex justify-center items-center w-[35px] h-[35px] bg-[#fcdbc2] rounded-[10px] ">
+                      <div className="flex justify-center items-center w-[2.734375vw] h-[2.734375vw] bg-[#fcdbc2] rounded-[10px] ">
                         <Group />
                       </div>
                       <p className="text-[1vw] mr-3">
@@ -104,7 +104,7 @@ const MiddleSlide = () => {
                       </p>
                     </div>
                     <div className="flex items-center mt-[2vw]">
-                      <div className="flex justify-center items-center w-[30px] h-[30px] bg-[#fff0bf] rounded-[10px] ">
+                      <div className="flex justify-center items-center w-[2.34375vw] h-[2.34375vw] bg-[#fff0bf] rounded-[10px] ">
                         <User />
                       </div>
                       <p className="text-[1vw] mr-3">
@@ -131,7 +131,7 @@ const MiddleSlide = () => {
                       </p>
                     </div>
                     <div className="flex items-center mt-[2vw]">
-                      <div className="flex justify-center items-center w-[30px] h-[30px] bg-[#b3dcd7] rounded-[10px] ">
+                      <div className="flex justify-center items-center w-[2.34375vw] h-[2.34375vw] bg-[#b3dcd7] rounded-[10px] ">
                         <Download />
                       </div>
                       <p className="text-[1vw] mr-3">
