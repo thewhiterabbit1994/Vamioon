@@ -20,9 +20,9 @@ export default () => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(2 20) rotate(-41.6335) scale(24.0832)"
       >
-        <stop stop-color="#FFD600" stop-opacity="0.8" />
-        <stop offset="0.5" stop-color="#FF0099" />
-        <stop offset="1" stop-color="#6100FF" stop-opacity="0.8" />
+        <stop stopColor="#FFD600" stopOpacity="0.8" />
+        <stop offset="0.5" stopColor="#FF0099" />
+        <stop offset="1" stopColor="#6100FF" stopOpacity="0.8" />
       </radialGradient>
     </defs>
   </svg>
