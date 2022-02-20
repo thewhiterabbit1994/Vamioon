@@ -6,7 +6,7 @@ const Footer = () => {
         <p>حریم خصوصی</p>
         <p>شرایط و ضوابط</p>
       </div>
-      <div className="flex ml-[30px] items-center">
+      <div className="flex ml-[5vh] items-center">
         <CIcon />
         <p className=" mr-1">توسعه توسط AlfaDevs</p>
       </div>

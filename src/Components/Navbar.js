@@ -6,7 +6,7 @@ import Support from "../Assets/Svg/NavbarSVG/Support";
 
 const Navbar = () => {
   return (
-    <div className="flex w-screen justify-between mt-[5vh] text-[12px] items-center">
+    <div className="flex absolute z-10 w-screen justify-between mt-[5vh] text-[12px] items-center">
       <div className="flex w-[40%] justify-around mr-[20px]  items-center">
         <div className="cursor-pointer">
           <Logo />
