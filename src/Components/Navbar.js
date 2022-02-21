@@ -17,17 +17,21 @@ const Navbar = () => {
         <Link to="/">
           <div className="flex items-center">
             <Home />
-            <p className="mr-[0.9375vw] mt-[3px]">خانه</p>
+            <p className="mr-[0.9375vw] mt-[0.234375vw]">خانه</p>
           </div>
         </Link>
-        <div className="flex items-center cursor-pointer mt-[0.234375vw]">
-          <Support />
-          <p className="mr-[0.9375vw] ">پشتیبانی</p>
-        </div>
-        <div className="flex items-center cursor-pointer">
-          <AskQuestion />
-          <p className="mr-[0.9375vw] mt-[0.15625vw]">سوالات متداول</p>
-        </div>
+        <Link to="support">
+          <div className="flex items-center cursor-pointer mt-[0.234375vw]">
+            <Support />
+            <p className="mr-[0.9375vw] ">پشتیبانی</p>
+          </div>
+        </Link>
+        <Link to="faq">
+          <div className="flex items-center cursor-pointer">
+            <AskQuestion />
+            <p className="mr-[0.9375vw] mt-[0.15625vw]">سوالات متداول</p>
+          </div>
+        </Link>
       </div>
       <div className="flex w-[20%] justify-around ml-[1.5625vw] items-center">
         <a
