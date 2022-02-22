@@ -36,12 +36,12 @@ const MainSection = () => {
       col: 2,
     },
     {
-      question: "حداگثر افرادی که میتونم به صندوق اضافه کنم چند نفره  ؟",
+      question: "حداکثر افرادی که میتونم به صندوق اضافه کنم چند نفره  ؟",
       isOpen: false,
       col: 2,
     },
     {
-      question: "آیا میتوانم به جز خودم مدیران دیکه ای به صندوق اضافه کنم؟",
+      question: "آیا میتوانم به جز خودم مدیران دیگه ای به صندوق اضافه کنم؟",
       isOpen: false,
       col: 2,
     },
@@ -68,7 +68,7 @@ const MainSection = () => {
   };
   return (
     <>
-      <div className="absolute z-[-10] h-screen w-screen flex  justify-end items-end">
+      <div className="absolute z-[-10] h-screen w-screen flex justify-end items-end">
         <Ellipse />
       </div>
       <section className="w-[89%] m-auto  flex justify-between ">
@@ -77,26 +77,26 @@ const MainSection = () => {
             .filter((item) => item.col === 1)
             .map((item, i) => {
               return (
-                <section>
+                <section key={i}>
                   <div
                     className={` w-[39.53147877013177vw] h-[3.6603221083455346vw] bottom-2 flex justify-center  rounded-lg text-[0.8784773060029283vw] mt-[1.4641288433382138vw] mr-[1.4641288433382138vw]
                   ${
                     item.isOpen === true
-                      ? "w-[39.53147877013177vw] h-[17.569546120058565vw] bottom-2 bg-[#ebe9e942] rounded-lg text-[0.8784773060029283vw] mt-[1.4641288433382138vw] mr-[1.4641288433382138vw] transition-all duration-[200ms] "
-                      : "w-[39.53147877013177vw] h-[55px] bottom-2 bg-[#ebe9e942]  rounded-lg text-[0.8784773060029283vw] mt-[1.4641288433382138vw] mr-[1.4641288433382138vw] transition-all duration-[200ms]"
+                      ? "w-[39.53147877013177vw] h-[17.569546120058565vw] bottom-[0.14vw] bg-[#ebe9e942] rounded-lg text-[0.8784773060029283vw] mt-[1.4641288433382138vw] mr-[1.4641288433382138vw] transition-all duration-[200ms] "
+                      : "w-[39.53147877013177vw] h-[4.02vw] bottom-[0.14vw] bg-[#ebe9e942]  rounded-[0.58vw] text-[0.8784773060029283vw] mt-[1.4641288433382138vw] mr-[1.4641288433382138vw] transition-all duration-[200ms]"
                   } `}
                   >
                     <div
                       className={`${
                         item.isOpen === true
-                          ? "w-[39.53147877013177vw] h-[3.6603221083455346vw] flex flex-col justify-between items-cente"
+                          ? "w-[39.53147877013177vw] h-[3.6603221083455346vw] flex flex-col justify-between items-center"
                           : "w-[39.53147877013177vw] flex-col h-[17.569546120058565vw] flex justify-between items-centr"
                       } `}
                     >
                       <div
                         className={`${
                           item.isOpen === true
-                            ? " flex flex-col items-center pr-[0.7320644216691069vw] border-2 h-[17.569546120058565vw] border-[#00693B] rounded-lg"
+                            ? " flex flex-col items-center pr-[0.7320644216691069vw] border-[0.20vw] h-[17.569546120058565vw] border-[#00693B] rounded-lg"
                             : " flex flex-col items-center pr-[0.7320644216691069vw]"
                         } `}
                       >
@@ -150,7 +150,7 @@ const MainSection = () => {
                         <p
                           className={`${
                             item.isOpen === true
-                              ? " w-[35.13909224011713vw] text-justify flex justify-end  h-[14.641288433382138vw] leading-6 pt-[1.0980966325036603vw]"
+                              ? " w-[35.13909224011713vw] text-justify flex justify-end  h-[14.641288433382138vw] leading-[1.7vw] pt-[1.0980966325036603vw]"
                               : "hidden"
                           }`}
                         >
@@ -174,28 +174,28 @@ const MainSection = () => {
         <section className=" w-[50%]">
           {databaseFaq1
             .filter((item) => item.col === 2)
-            .map((item) => {
+            .map((item, i) => {
               return (
-                <section>
+                <section key={i}>
                   <div
                     className={` w-[39.53147877013177vw] h-[3.6603221083455346vw] bottom-2 flex justify-center  rounded-lg text-[0.8784773060029283vw] mt-[1.4641288433382138vw] mr-[1.4641288433382138vw]
                   ${
                     item.isOpen === true
-                      ? "w-[39.53147877013177vw] h-[17.569546120058565vw] bottom-2 bg-[#ebe9e942] rounded-lg text-[0.8784773060029283vw] mt-[1.4641288433382138vw] mr-[1.4641288433382138vw] transition-all duration-[200ms] "
-                      : "w-[39.53147877013177vw] h-[55px] bottom-2 bg-[#ebe9e942]  rounded-lg text-[0.8784773060029283vw] mt-[1.4641288433382138vw] mr-[1.4641288433382138vw] transition-all duration-[200ms]"
+                      ? "w-[39.53147877013177vw] h-[17.569546120058565vw]  bottom-[0.58vw] bg-[#ebe9e942] rounded-lg text-[0.8784773060029283vw] mt-[1.4641288433382138vw] mr-[1.4641288433382138vw] transition-all duration-[200ms] "
+                      : "w-[39.53147877013177vw] h-[4.02vw] bottom-[0.58vw] bg-[#ebe9e942]  rounded-[0.58vw] text-[0.8784773060029283vw] mt-[1.4641288433382138vw] mr-[1.4641288433382138vw] transition-all duration-[200ms]"
                   } `}
                   >
                     <div
                       className={`${
                         item.isOpen === true
-                          ? "w-[39.53147877013177vw] h-[3.6603221083455346vw] flex flex-col justify-between items-cente"
+                          ? "w-[39.53147877013177vw] h-[3.6603221083455346vw] flex flex-col justify-between items-center"
                           : "w-[39.53147877013177vw] flex-col h-[17.569546120058565vw] flex justify-between items-centr"
                       } `}
                     >
                       <div
                         className={`${
                           item.isOpen === true
-                            ? " flex flex-col items-center pr-[0.7320644216691069vw] border-2 h-[17.569546120058565vw] border-[#00693B] rounded-lg"
+                            ? " flex flex-col items-center pr-[0.7320644216691069vw] border-[0.14vw] h-[17.569546120058565vw] border-[#00693B] rounded-lg"
                             : " flex flex-col items-center pr-[0.7320644216691069vw]"
                         } `}
                       >
