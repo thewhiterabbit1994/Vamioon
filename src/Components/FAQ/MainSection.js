@@ -2,39 +2,140 @@ import { useState } from "react"
 import ArrowUp from "../../Assets/Svg/FAQSVG/ArrowUp"
 import ArrowDown from "../../Assets/Svg/FAQSVG/ArrowDown"
 const MainSection = () => {
+  const [databaseFaq1, setdatabaseFaq1] = useState([
+    {
+      question: "شفافیت در وامیون چه جوریه ؟",
+      isOpen: false,
+      col: 1
+    },
+    {
+      question: "آیا وامیون مجوزهای لازم رو داره ؟",
+      isOpen: false,
+      col: 1
+    },
+    {
+      question: "وامیون جه قدر قابل اعتماده ؟",
+      isOpen: false,
+      col: 1
+    },
+    {
+      question: "امنیت پول من در وامیون چه طور تامین میشه ؟",
+      isOpen: false,
+      col: 1
+    },
+    {
+      question: " اگر کسی رو از صندوقم حذف کنم متوجه میشه ؟ ",
+      isOpen: false,
+      col: 2
+    },
+    {
+      question: " حداقل مبلغ  برای وام چه قدره  ؟ ",
+      isOpen: false,
+      col: 2
+    },
+    {
+      question: "حداگثر افرادی که میتونم به صندوق اضافه کنم چند نفره  ؟",
+      isOpen: false,
+      col: 2
+    },
+    {
+      question: "آیا میتوانم به جز خودم مدیران دیکه ای به صندوق اضافه کنم؟",
+      isOpen: false,
+      col: 2
+    }
+  ])
   const [question1, setquestion1] = useState(false)
+  const [question2, setquestion2] = useState(false)
 
+  const handleDrop = (item, i) => {
+    return (
+      item.isOpen = !item.isOpen,
+      setquestion1(!question1),
+      question1 === true ? databaseFaq1[3].col = 1 : databaseFaq1[3].col = 2
+      // databaseFaq1.filter(item=> item.isOpen === false ? item.isOpen = false : item.isOpen = true)
+      // databaseFaq1[3].isOpen === true ? databaseFaq1[7].col = 1 : databaseFaq1[7].col = 2,
+      // databaseFaq1[3].isOpen === true ? databaseFaq1[6].col = 1 : databaseFaq1[7].col = 2
+    )
+  }
+  const handleDrop2 = (item) => {
+    return (
+      item.isOpen = !item.isOpen,
+      setquestion2(!question2),
+      question2 === true ? databaseFaq1[7].col = 2 : databaseFaq1[7].col = 1
+    )
+  }
   return (
-    <section className="w-[80%] m-auto ">
-      <section className="text-[#4D4D4D]">
-        <div
-          className={` w-[540px] h-[50px] bottom-2 flex justify-center  rounded-lg text-[12px] mt-[20px] mr-[20px] 
-                 ${question1 ? "w-[540px] h-[240px] bottom-2 bg-[#ebe9e979]  rounded-lg text-[12px] mt-[20px] mr-[20px] transition-all duration-[700ms] "
-              : "w-[540px] h-[50px] bottom-2 bg-[#ebe9e979]  rounded-lg text-[12px] mt-[20px] mr-[20px] transition-all duration-[500ms]"} `}>
-
-          <div className={`${!question1 ? "w-[540px] h-[40px] flex flex-col justify-between items-cente" : "w-[540px] flex-col h-[240px] flex justify-between items-centr"} `}>
-            <div className={`${question1 ? " flex flex-col items-center pr-[10px] border-2 border-[#00693B] rounded-lg" :" flex flex-col items-center pr-[10px]"} `}>
-              <div className="flex justify-between w-[520px]  mt-[10px]">
-                <div className="flex items-center ">
-                  <p className={`${!question1 ? "w-[10px] h-[10px] rounded-[50%] bg-[#C4C4C4]" : "w-[10px] h-[10px] rounded-[50%] bg-[#00AF63]"} `}></p>
-                  <p className={`${!question1 ? " flex justify-end items-center pr-[20px] h-[40px]" : "flex justify-end items-center pr-[20px] h-[40px]"}`}>شفافیت در وامیون چه جوریه ؟ </p>
+    <section className="w-[89%] m-auto  flex justify-between ">
+      <section className="text-[#4D4D4D] w-[50%]   ">
+        {
+          databaseFaq1.filter(item => item.col === 1).map((item, i) => {
+            return (
+              <section>
+                <div
+                  className={` w-[39.53147877013177vw] h-[3.6603221083455346vw] bottom-2 flex justify-center  rounded-lg text-[0.8784773060029283vw] mt-[1.4641288433382138vw] mr-[1.4641288433382138vw]
+                  ${item.isOpen === true ? "w-[39.53147877013177vw] h-[17.569546120058565vw] bottom-2 bg-[#ebe9e942] rounded-lg text-[0.8784773060029283vw] mt-[1.4641288433382138vw] mr-[1.4641288433382138vw] transition-all duration-[200ms] "
+                      : "w-[39.53147877013177vw] h-[55px] bottom-2 bg-[#ebe9e942]  rounded-lg text-[0.8784773060029283vw] mt-[1.4641288433382138vw] mr-[1.4641288433382138vw] transition-all duration-[200ms]"} `}>
+                  <div className={`${item.isOpen === true ? "w-[39.53147877013177vw] h-[3.6603221083455346vw] flex flex-col justify-between items-cente" : "w-[39.53147877013177vw] flex-col h-[17.569546120058565vw] flex justify-between items-centr"} `}>
+                    <div className={`${item.isOpen === true ? " flex flex-col items-center pr-[0.7320644216691069vw] border-2 h-[17.569546120058565vw] border-[#00693B] rounded-lg" : " flex flex-col items-center pr-[0.7320644216691069vw]"} `}>
+                      <div className="flex justify-between w-[37.33528550512445vw]  my-[0.7320644216691069vw]">
+                        <div className="flex items-center pr-[1.4641288433382138vw] ">
+                          <p className={`${!item.isOpen === true ? "w-[0.7320644216691069vw] h-[0.7320644216691069vw] rounded-[50%] bg-[#C4C4C4]" : "w-[0.7320644216691069vw] h-[0.7320644216691069vw] rounded-[50%] bg-[#00AF63]"} `}></p>
+                          <p className={`${!item.isOpen === true ? " flex justify-end items-center pr-[1.4641288433382138vw] h-[2.9282576866764276vw]" : "flex justify-end items-center pr-[1.4641288433382138vw] h-[2.9282576866764276vw]"}`}>{item.question} </p>
+                        </div>
+                        <p
+                          onClick={() => handleDrop(item, i)}
+                          className={`${!item.isOpen === true ? "text-[1.4641288433382138vw] pl-[2.1961932650073206vw] pt-[1.0980966325036603vw] cursor-pointer" : "hidden"} `}><ArrowDown />
+                        </p>
+                        <p
+                          onClick={() => handleDrop(item, i)}
+                          className={`${item.isOpen === true ? "text-[1.4641288433382138vw] pl-[2.1961932650073206vw] pt-[1.0980966325036603vw] cursor-pointer" : "hidden"} `}><ArrowUp />
+                        </p>
+                      </div>
+                      <div className={`${item.isOpen === true ? "w-[34.40702781844802vw] h-[0.14641288433382138vw] rounded-lg bg-[#c4c4c469]" : " hidden"} `}></div>
+                      <p className={`${item.isOpen === true ? " w-[35.13909224011713vw] text-justify flex justify-end  h-[14.641288433382138vw] leading-6 pt-[1.0980966325036603vw]" : "hidden"}`}>لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که صفحه</p>
+                    </div>
+                  </div>
                 </div>
-                <p
-                  onClick={() => setquestion1(!question1)}
-                  className={`${!question1 ? "text-[20px] pl-[30px] pt-[15px] cursor-pointer" : "hidden"} `}><ArrowDown />
-                </p>
-                <p
-                  onClick={() => setquestion1(!question1)}
-                  className={`${question1 ? "text-[20px] pl-[30px] pt-[15px] cursor-pointer" : "hidden"} `}><ArrowUp />
-                </p>
-              </div>
-              <div className={`${question1 ? "w-[470px] h-[2px] rounded-lg bg-[#C4C4C4]" : " hidden" } `}></div>
-              <p className={`${question1 ? "w-[480px] text-justify flex justify-end  h-[200px] leading-6 pt-[15px]" : "hidden"}`}>لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که صفحه</p>
-            </div>
-          </div>
-        </div>
+              </section>
+            )
+          })
+        }
+      </section >
+      <section className=" w-[50%]">
+        {
+          databaseFaq1.filter(item => item.col === 2).map((item) => {
+            return (
+              <section>
+                <div
+                  className={` w-[39.53147877013177vw] h-[3.6603221083455346vw] bottom-2 flex justify-center  rounded-lg text-[0.8784773060029283vw] mt-[1.4641288433382138vw] mr-[1.4641288433382138vw]
+                  ${item.isOpen === true ? "w-[39.53147877013177vw] h-[17.569546120058565vw] bottom-2 bg-[#ebe9e942] rounded-lg text-[0.8784773060029283vw] mt-[1.4641288433382138vw] mr-[1.4641288433382138vw] transition-all duration-[200ms] "
+                      : "w-[39.53147877013177vw] h-[55px] bottom-2 bg-[#ebe9e942]  rounded-lg text-[0.8784773060029283vw] mt-[1.4641288433382138vw] mr-[1.4641288433382138vw] transition-all duration-[200ms]"} `}>
+                  <div className={`${item.isOpen === true ? "w-[39.53147877013177vw] h-[3.6603221083455346vw] flex flex-col justify-between items-cente" : "w-[39.53147877013177vw] flex-col h-[17.569546120058565vw] flex justify-between items-centr"} `}>
+                    <div className={`${item.isOpen === true ? " flex flex-col items-center pr-[0.7320644216691069vw] border-2 h-[17.569546120058565vw] border-[#00693B] rounded-lg" : " flex flex-col items-center pr-[0.7320644216691069vw]"} `}>
+                      <div className="flex justify-between w-[37.33528550512445vw]  my-[0.7320644216691069vw]">
+                        <div className="flex items-center pr-[1.4641288433382138vw] ">
+                          <p className={`${!item.isOpen === true ? "w-[0.7320644216691069vw] h-[0.7320644216691069vw] rounded-[50%] bg-[#C4C4C4]" : "w-[0.7320644216691069vw] h-[0.7320644216691069vw] rounded-[50%] bg-[#00AF63]"} `}></p>
+                          <p className={`${!item.isOpen === true ? " flex justify-end items-center pr-[1.4641288433382138vw] h-[2.9282576866764276vw]" : "flex justify-end items-center pr-[1.4641288433382138vw] h-[2.9282576866764276vw]"}`}>{item.question} </p>
+                        </div>
+                        <p
+                          onClick={() => handleDrop2(item)}
+                          className={`${!item.isOpen === true ? "text-[1.4641288433382138vw] pl-[2.1961932650073206vw] pt-[1.0980966325036603vw] cursor-pointer" : "hidden"} `}><ArrowDown />
+                        </p>
+                        <p
+                          onClick={() => handleDrop2(item)}
+                          className={`${item.isOpen === true ? "text-[1.4641288433382138vw] pl-[2.1961932650073206vw] pt-[1.0980966325036603vw] cursor-pointer" : "hidden"} `}><ArrowUp />
+                        </p>
+                      </div>
+                      <div className={`${item.isOpen === true ? "w-[34.40702781844802vw] h-[0.14641288433382138vw] rounded-lg bg-[#c4c4c469]" : " hidden"} `}></div>
+                      <p className={`${item.isOpen === true ? "w-[35.13909224011713vw] text-justify flex justify-end  h-[200px] leading-6 pt-[1.0980966325036603vw]" : "hidden"}`}>لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که صفحه</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )
+          })
+        }
       </section>
-      <section></section>
     </section>
   )
 }
