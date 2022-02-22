@@ -21,7 +21,6 @@ const MiddleSlide = () => {
         <Elipse2 />
       </div>
       <ReactFullpage
-        //fullpage options
         KeyboardScrolling={(true, "down, right")}
         licenseKey={"YOUR_KEY_HERE"}
         navigation
