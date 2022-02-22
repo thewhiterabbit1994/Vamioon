@@ -43,8 +43,8 @@ export default () => (
         y2="20.1217"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00AF63" />
-        <stop offset="1" stop-color="#00693B" stop-opacity="0.502" />
+        <stop stopColor="#00AF63" />
+        <stop offset="1" stopColor="#00693B" stopOpacity="0.502" />
       </linearGradient>
     </defs>
   </svg>

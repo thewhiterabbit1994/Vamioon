@@ -1,27 +1,27 @@
 export default () => (
   <svg
-    width="100vw"
-    height="100vh"
-    viewBox="0 0 1366 768"
+    width="44.6875vw"
+    height="97.7152899824253vh"
+    viewBox="0 0 572 556"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g opacity="0.5" filter="url(#filter0_f_42_4097)">
+    <g opacity="0.5" filter="url(#filter0_f_231_207)">
       <circle
-        cx="682.517"
-        cy="397.517"
-        r="403.734"
-        transform="rotate(-7.75449 682.517 397.517)"
-        fill="#FFE694"
+        cx="155.742"
+        cy="415.742"
+        r="295.565"
+        transform="rotate(-7.75449 155.742 415.742)"
+        fill="#FFF5D4"
       />
     </g>
     <defs>
       <filter
-        id="filter0_f_42_4097"
-        x="-121.265"
-        y="-406.265"
-        width="1607.56"
-        height="1607.56"
+        id="filter0_f_231_207"
+        x="-259.858"
+        y="0.14209"
+        width="831.199"
+        height="831.199"
         filterUnits="userSpaceOnUse"
         colorInterpolationFilters="sRGB"
       >
@@ -33,8 +33,8 @@ export default () => (
           result="shape"
         />
         <feGaussianBlur
-          stdDeviation="200"
-          result="effect1_foregroundBlur_42_4097"
+          stdDeviation="60"
+          result="effect1_foregroundBlur_231_207"
         />
       </filter>
     </defs>
