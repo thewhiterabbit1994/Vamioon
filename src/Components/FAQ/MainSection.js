@@ -68,7 +68,7 @@ const MainSection = () => {
   };
   return (
     <>
-      <div className="absolute flex justify-start items-end">
+      <div className="absolute z-[-10] h-screen w-screen flex  justify-end items-end">
         <Ellipse />
       </div>
       <section className="w-[89%] m-auto  flex justify-between ">
