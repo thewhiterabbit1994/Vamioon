@@ -9,6 +9,7 @@ import Search from "../../Assets/Svg/HeaderSVG/Search";
 import adminImg from "../../Assets/Img/UserProfileImg.jpg";
 import Arrow from "../../Assets/Svg/HeaderSVG/Arrow";
 import UserSettingModal from "../../Assets/Svg/UserSettingModalSVG/UserSettingModal";
+import Sandoq from "../../Assets/Svg/HeaderSVG/Sandoq";
 
 export default () => {
   let location = useLocation();
@@ -73,81 +74,175 @@ export default () => {
   console.log("full date is :", date);
   console.log("---------------------------------------");
   return (
-    <div className="w-screen fixed top-0  h-[5vw] flex justify-between items-center ">
-      <div className="flex mr-[9vw] justify-between items-center">
-        <div>
-          {location.pathname === "/panel/admin/main" ? (
-            <UserPanel />
-          ) : location.pathname === "/panel/admin/loans" ? (
-            <Loans />
-          ) : location.pathname === "/panel/admin/reports" ? (
-            <Reports />
-          ) : location.pathname === "/panel/admin/notifications" ? (
-            <Alert />
-          ) : (
-            ""
-          )}
-        </div>
-        <p className="text-[1.2vw] mr-[0.8vw]">
-          {location.pathname === "/panel/admin/main"
-            ? " پنل کاربری"
-            : location.pathname === "/panel/admin/loans"
-            ? "وام ها"
-            : location.pathname === "/panel/admin/reports"
-            ? "گزارشات"
-            : location.pathname === "/panel/admin/notifications"
-            ? "اعلان ها"
-            : ""}
-        </p>
-      </div>
+    <>
       <div
-        onMouseEnter={() => setisUserSettingModalDisplay(false)}
-        className="flex justify-between items-center"
+        className={`
+    ${
+      location.pathname === "/panel/admin/main" ||
+      location.pathname === "/panel/admin/loans" ||
+      location.pathname === "/panel/admin/reports" ||
+      location.pathname === "/panel/admin/notifications"
+        ? "w-[90vw] mr-[9vw] fixed top-0 z-10 bg-white h-[5vw] flex justify-between items-center"
+        : "hidden"
+    }
+     `}
       >
-        <div>
-          <div className="flex justify-between items-center">
-            <Today />
-            <p className="text-[0.9vw] mt-[0.2vw] mr-[0.5vw] text-[#4a5e67]">
-              امروز
+        <div className="flex  justify-between items-center">
+          <div>
+            {location.pathname === "/panel/admin/main" ? (
+              <UserPanel />
+            ) : location.pathname === "/panel/admin/loans" ? (
+              <Loans />
+            ) : location.pathname === "/panel/admin/reports" ? (
+              <Reports />
+            ) : location.pathname === "/panel/admin/notifications" ? (
+              <Alert />
+            ) : (
+              ""
+            )}
+          </div>
+          <p className="text-[1.2vw] mr-[0.8vw]">
+            {location.pathname === "/panel/admin/main"
+              ? " پنل کاربری"
+              : location.pathname === "/panel/admin/loans"
+              ? "وام ها"
+              : location.pathname === "/panel/admin/reports"
+              ? "گزارشات"
+              : location.pathname === "/panel/admin/notifications"
+              ? "اعلان ها"
+              : ""}
+          </p>
+        </div>
+        <div className="flex justify-between items-center">
+          <div>
+            <div className="flex justify-between items-center">
+              <Today />
+              <p className="text-[0.9vw] mt-[0.2vw] mr-[0.5vw] text-[#4a5e67]">
+                امروز
+              </p>
+            </div>
+          </div>
+          <div>
+            <p className="text-[0.9vw] mt-[0.2vw] mr-[1.5vw] ml-[1.5vw] text-[#4a5e67]">
+              {weekDay + "," + day + " " + month + " " + year}
             </p>
           </div>
-        </div>
-        <div>
-          <p className="text-[0.9vw] mt-[0.2vw] mr-[1.5vw] ml-[1.5vw] text-[#4a5e67]">
-            {weekDay + "," + day + " " + month + " " + year}
-          </p>
-        </div>
-        <div className="flex">
-          <div className="absolute mt-[1vw] mr-[1vw]">
-            <Search />
+          <div className="flex">
+            <div className="absolute mt-[1vw] mr-[1vw]">
+              <Search />
+            </div>
+            <input
+              placeholder="افراد را جستوجو کنید"
+              className="flex w-[22vw] h-[2.8vw] outline-none bg-[#f2f2f2] px-[3vw] text-[1vw] text-[#4a5e67] rounded-[0.8vw] "
+            />
           </div>
-          <input
-            onMouseEnter={() => setisUserSettingModalDisplay(false)}
-            placeholder="افراد را جستوجو کنید"
-            className="flex w-[22vw] h-[2.8vw] outline-none bg-[#f2f2f2] px-[3vw] text-[1vw] text-[#4a5e67] rounded-[0.8vw] "
-          />
-        </div>
-        <div
-          onMouseEnter={() => setisUserSettingModalDisplay(true)}
-          className="cursor-pointer flex justify-between items-center w-fit h-[2.8vw] mx-[1vw] bg-white rounded-[0.8vw] border-[#c4c4c4] border-[0.155vw]"
-        >
-          <img className="h-[2vw] rounded-full mr-[1vw]" src={adminImg} />
-          <p className="text-[0.9vw] mt-[0.2vw] px-[0.5vw] text-[#4a5e67]">
-            محمد حسین ضرابی
-          </p>
-          <div className="pl-[0.5vw]">
-            <Arrow />
+          <div
+            onClick={() =>
+              setisUserSettingModalDisplay(!isUserSettingModalDisplay)
+            }
+            className="cursor-pointer flex justify-between items-center w-fit h-[2.8vw] mx-[1vw] bg-white rounded-[0.8vw] border-[#c4c4c4] border-[0.155vw]"
+          >
+            <img className="h-[2vw] rounded-full mr-[1vw]" src={adminImg} />
+            <p className="text-[0.9vw] mt-[0.2vw] px-[0.5vw] text-[#4a5e67]">
+              محمد حسین ضرابی
+            </p>
+            <div className="pl-[0.5vw]">
+              <Arrow />
+            </div>
           </div>
-        </div>
-        <div
-          onMouseLeave={() => setisUserSettingModalDisplay(false)}
-          className={`translate transition-opacity absolute top-[3.2vw] left-[0.5vw] opacity-100  ${
-            isUserSettingModalDisplay ? "cursor-pointer" : "opacity-0 scale-0 "
-          } `}
-        >
-          <UserSettingModal />
+          <div
+            className={`translate transition-opacity absolute top-[3.2vw] left-[0.5vw] opacity-100  ${
+              isUserSettingModalDisplay
+                ? "cursor-pointer"
+                : "opacity-0 scale-0 "
+            } `}
+          >
+            <UserSettingModal />
+          </div>
         </div>
       </div>
-    </div>
+      <div
+        className={`
+    ${
+      location.pathname === "/panel/user/main" ||
+      location.pathname === "/panel/user/loans" ||
+      location.pathname === "/panel/user/reports" ||
+      location.pathname === "/panel/user/notifications"
+        ? "w-[90vw] mr-[9vw] fixed top-0 z-10 bg-white h-[5vw] flex justify-between items-center"
+        : "hidden"
+    }
+     `}
+      >
+        <div className="flex justify-between items-center">
+          <div>
+            {location.pathname === "/panel/user/main" ? (
+              <Sandoq />
+            ) : location.pathname === "/panel/user/loans" ? (
+              <Loans />
+            ) : location.pathname === "/panel/user/notifications" ? (
+              <Alert />
+            ) : (
+              ""
+            )}
+          </div>
+          <p className="text-[1.2vw] mr-[0.8vw]">
+            {location.pathname === "/panel/user/main"
+              ? "صندوق همکاران شرکت"
+              : location.pathname === "/panel/user/loans"
+              ? "وام ها"
+              : location.pathname === "/panel/user/notifications"
+              ? "اعلان ها"
+              : ""}
+          </p>
+        </div>
+        <div className="flex justify-between items-center">
+          <div>
+            <div className="flex justify-between items-center">
+              <Today />
+              <p className="text-[0.9vw] mt-[0.2vw] mr-[0.5vw] text-[#4a5e67]">
+                امروز
+              </p>
+            </div>
+          </div>
+          <div>
+            <p className="text-[0.9vw] mt-[0.2vw] mr-[1.5vw] ml-[1.5vw] text-[#4a5e67]">
+              {weekDay + "," + day + " " + month + " " + year}
+            </p>
+          </div>
+          <div className="flex">
+            <div className="absolute mt-[1vw] mr-[1vw]">
+              <Search />
+            </div>
+            <input
+              placeholder="نام صندوق را جستوجو کنید"
+              className="flex w-[22vw] h-[2.8vw] outline-none bg-[#f2f2f2] px-[3vw] text-[1vw] text-[#4a5e67] rounded-[0.8vw] "
+            />
+          </div>
+          <div
+            onClick={() =>
+              setisUserSettingModalDisplay(!isUserSettingModalDisplay)
+            }
+            className="cursor-pointer flex justify-between items-center w-fit h-[2.8vw] mx-[1vw] bg-white rounded-[0.8vw] border-[#c4c4c4] border-[0.155vw]"
+          >
+            <img className="h-[2vw] rounded-full mr-[1vw]" src={adminImg} />
+            <p className="text-[0.9vw] mt-[0.2vw] px-[0.5vw] text-[#4a5e67]">
+              محمد حسین ضرابی
+            </p>
+            <div className="pl-[0.5vw]">
+              <Arrow />
+            </div>
+          </div>
+          <div
+            className={`translate transition-opacity absolute top-[3.2vw] left-[0.5vw] opacity-100  ${
+              isUserSettingModalDisplay
+                ? "cursor-pointer"
+                : "opacity-0 scale-0 "
+            } `}
+          >
+            <UserSettingModal />
+          </div>
+        </div>
+      </div>
+    </>
   );
 };

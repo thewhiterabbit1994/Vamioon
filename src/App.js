@@ -8,13 +8,13 @@ import Support from "./Pages/Support";
 import Login from "./Pages/Login";
 import VerificationCode from "./Pages/VerificationCode";
 import Panel from "./Pages/Panels/Panel";
-import AdminMain from "./Pages/Panels/Admin/AdminMain";
-import AdminLoans from "./Pages/Panels/Admin/AdminLoans";
-import AdminReports from "./Pages/Panels/Admin/AdminReports";
-import AdminNotifications from "./Pages/Panels/Admin/AdminNotifications";
-import UserMain from "./Pages/Panels/User/UserMain";
-import UserLoans from "./Pages/Panels/User/UserLoans";
-import UserNotifications from "./Pages/Panels/User/UserNotifications";
+import AdminMainPage from "./Pages/Panels/Admin/AdminMainPage";
+import AdminLoansPage from "./Pages/Panels/Admin/AdminLoansPage";
+import AdminReportsPage from "./Pages/Panels/Admin/AdminReportsPage";
+import AdminNotificationsPage from "./Pages/Panels/Admin/AdminNotificationsPage";
+import UserMainPage from "./Pages/Panels/User/UserMainPage";
+import UserLoansPage from "./Pages/Panels/User/UserLoansPage";
+import UserNotificationsPage from "./Pages/Panels/User/UserNotificationsPage";
 
 function App() {
   return (
@@ -33,17 +33,20 @@ function App() {
             />
           </Route>
           <Route path="/panel" element={<Panel />}>
-            <Route path="admin/main" element={<AdminMain />} />
-            <Route path="admin/loans" element={<AdminLoans />} />
-            <Route path="admin/reports" element={<AdminReports />} />
+            <Route path="admin/main" element={<AdminMainPage />} />
+            <Route path="admin/loans" element={<AdminLoansPage />} />
+            <Route path="admin/reports" element={<AdminReportsPage />} />
             <Route
               path="admin/notifications"
-              element={<AdminNotifications />}
+              element={<AdminNotificationsPage />}
             />
 
-            <Route path="user/main" element={<UserMain />} />
-            <Route path="user/loans" element={<UserLoans />} />
-            <Route path="user/notifications" element={<UserNotifications />} />
+            <Route path="user/main" element={<UserMainPage />} />
+            <Route path="user/loans" element={<UserLoansPage />} />
+            <Route
+              path="user/notifications"
+              element={<UserNotificationsPage />}
+            />
           </Route>
         </Routes>
       </BrowserRouter>

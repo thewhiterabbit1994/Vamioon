@@ -17,3 +17,28 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+.hidescroll::-webkit-scrollbar {
+  display: none;
+}
+
+.shadow-bottom {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.527), transparent 80%)
+    bottom;
+  background-size: 100% 11.71875vw;
+  background-repeat: no-repeat;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 0.78125vw;
+}
+
+td:first-child {
+  border-top-right-radius: 0.78125vw;
+  border-bottom-right-radius: 0.78125vw;
+}
+td:last-child {
+  border-top-left-radius: 0.78125vw;
+  border-bottom-left-radius: 0.78125vw;
+}
