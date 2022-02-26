@@ -103,6 +103,7 @@ export default () => {
       loanTokenPrice: "50.000.000",
     },
   ]);
+  const [searchInputValue, setsearchInputValue] = useState("");
   return (
     <div className="">
       <div className="hidescroll flex shadow-bottom absolute pb-[2vw] mt-[5.5vw] mr-[9vw] w-[40vw] h-[52vw] overflow-y-auto overflow-x-hidden scroll-smooth  rounded-[0.8vw] border-[#c4c4c4] border-[0.155vw]">
