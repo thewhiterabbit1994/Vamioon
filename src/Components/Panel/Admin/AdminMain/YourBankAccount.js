@@ -25,10 +25,10 @@ export default () => {
             <p>محمد حسین ضرابی</p>
           </div>
           <div className="w-full text-[1.3vw] flex justify-between px-[1vw]">
-            <p>6219</p>
-            <p>8619</p>
-            <p>0824</p>
             <p>2034</p>
+            <p>0824</p>
+            <p>8619</p>
+            <p>6219</p>
           </div>
           <div className="w-full flex justify-between ">
             <div className="text-[1vw] text-[#4d4d4d]">
