@@ -1,18 +1,24 @@
 import FrequentlyAskedQuestions from "../../Assets/Svg/FAQSVG/FrequentlyAskedQuestions"
 import Email from "../../Assets/Svg/FAQSVG/Email"
+import BgEmailFaq from "../../Assets/Svg/FAQSVG/BgEmailFaq"
 const HeaderFaq = () => {
     return (
-        <section className="w-[90%] pt-[7.320644216691069vw] m-auto  ">
-            <section className="flex justify-between text-[0.8784773060029283vw] h-[3.6603221083455346vw] items-center">
-                <section className="w-[6.222547584187408vw] flex justify-between">
+        <section className="w-[90%] pt-[7.32vw] m-auto  ">
+            <section className="flex justify-between text-[0.87vw] h-[3.66vw] items-center">
+                <section className="w-[11.7vw] flex justify-between">
                     <FrequentlyAskedQuestions />
-                    <p className="text-[1.171303074670571vw]">پشتیبانی</p>
+                    <p className="text-[1.17vw]">سوالات متداول شما</p>
                 </section>
-                <section className="flex w-[32.210834553440705vw] justify-between h-[3.6603221083455346vw] items-center">
-                    <p>سوالات و پیشنهاد های خود را با ما درمیان بگذارید</p>
-                    <div className="flex justify-center items-center bg-[#ede9e94b] w-[13.177159590043924vw] h-[3.6603221083455346vw] rounded-[2.1961932650073206vw]">
-                        <Email />
-                        <p className="mr-[0.36603221083455345vw]">support@vamion.com</p>
+                <section className="flex w-[34vw] justify-between h-[3.66vw] items-center">
+                    <p className="mb-[.5vw]">سوالات و پیشنهاد های خود را با ما درمیان بگذارید</p>
+                    <div className="relative ">
+                        <BgEmailFaq />
+                        <div className="flex justify-center items-center cursor-pointer pt-[.3vw] absolute top-[.7vw] left-[.9vw] w-[13.17vw] h-[3.66vw] rounded-[2.19vw]">
+                            <Email />
+                            <a
+                                className="mr-[0.366vw] mt-[.3vw]"
+                                href="mailto:webmaster@example.com">support@vamion.com</a>
+                        </div>
                     </div>
                 </section>
             </section>

@@ -7,6 +7,10 @@ import MiddleSlide from "./Components/HomePage/MiddleSlide";
 import Support from "./Pages/Support";
 import Login from "./Pages/Login";
 import VerificationCode from "./Pages/VerificationCode";
+import SearchResultUser from "./Components/Modals/LogOut"
+import EmojiClever from "../src/Assets/Svg/ModalSVG/EmojiBirth"
+import Button from "../src/Components/Modals/Button"
+
 
 function App() {
   return (
@@ -14,6 +18,7 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
+      <Route path="/SearchResultUser" element={<SearchResultUser emoji={<EmojiClever/>} textclassName={"top-[10vw]"} text={"کاربر عضوصندوق شد!"} text3={"لینک صندق براش فستاده میشه"} />} />
           <Route path="/" element={<HomePage />}>
             <Route path="/" element={<MiddleSlide />} />
             <Route path="support" element={<Support />} />
