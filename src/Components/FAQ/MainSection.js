@@ -1,53 +1,53 @@
-import { useState } from "react"
-import ArrowUp from "../../Assets/Svg/FAQSVG/ArrowUp"
-import ArrowDown from "../../Assets/Svg/FAQSVG/ArrowDown"
-import Ellipse from "../../Assets/Svg/FAQSVG/Ellipse"
+import { useState } from "react";
+import ArrowUp from "../../Assets/Svg/FAQSVG/ArrowUp";
+import ArrowDown from "../../Assets/Svg/FAQSVG/ArrowDown";
+import Ellipse from "../../Assets/Svg/FAQSVG/Ellipse";
 
 const MainSection = () => {
   const [databaseFaq1, setdatabaseFaq1] = useState([
     {
       question: "شفافیت در وامیون چه جوریه ؟",
       isOpen: false,
-      col: 1
+      col: 1,
     },
     {
       question: "آیا وامیون مجوزهای لازم رو داره ؟",
       isOpen: false,
-      col: 1
+      col: 1,
     },
     {
       question: "وامیون جه قدر قابل اعتماده ؟",
       isOpen: false,
-      col: 1
+      col: 1,
     },
     {
       question: "امنیت پول من در وامیون چه طور تامین میشه ؟",
       isOpen: false,
-      col: 1
+      col: 1,
     },
     {
       question: " اگر کسی رو از صندوقم حذف کنم متوجه میشه ؟ ",
       isOpen: false,
-      col: 2
+      col: 2,
     },
     {
       question: " حداقل مبلغ  برای وام چه قدره  ؟ ",
       isOpen: false,
-      col: 2
+      col: 2,
     },
     {
       question: "حداکثر افرادی که میتونم به صندوق اضافه کنم چند نفره  ؟",
       isOpen: false,
-      col: 2
+      col: 2,
     },
     {
       question: "آیا میتوانم به جز خودم مدیران دیگه ای به صندوق اضافه کنم؟",
       isOpen: false,
-      col: 2
-    }
-  ])
-  const [question1, setquestion1] = useState(false)
-  const [question2, setquestion2] = useState(false)
+      col: 2,
+    },
+  ]);
+  const [question1, setquestion1] = useState(false);
+  const [question2, setquestion2] = useState(false);
 
   const handleDrop = (item, i) => {
     return (
@@ -71,8 +71,7 @@ const MainSection = () => {
           {
             databaseFaq1.filter(item => item.col === 1).map((item, i) => {
               return (
-                <section
-                  key={i}>
+                <section key={i}>
                   <div
                     onClick={() => handleDrop(item, i)}
                     className={` w-[42vw] h-[3.66vw] bottom-2 cursor-pointer flex justify-center mr-[0px]  rounded-lg text-[0.87vw] mt-[1.46vw] 
@@ -133,9 +132,8 @@ const MainSection = () => {
                     </div>
                   </div>
                 </section>
-              )
-            })
-          }
+              );
+            })}
         </section>
       </section>
 

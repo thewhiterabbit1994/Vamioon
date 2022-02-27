@@ -165,12 +165,14 @@ export default () => {
               </div>
             </div>
           </div>
-          <button
-            ref={btnSubmit}
-            className="bg-[#00693b] text-[1.1vw] mt-[1vw] mb-[1.2vw] mx-[2vw] px-[10vw] py-[1vw] rounded-full text-white "
-          >
-            ارسال و ورود
-          </button>
+          <Link to="/panel/admin/main">
+            <button
+              ref={btnSubmit}
+              className="bg-[#00693b] text-[1.1vw] mt-[1vw] mb-[1.2vw] mx-[2vw] px-[10vw] py-[1vw] rounded-full text-white "
+            >
+              ارسال و ورود
+            </button>
+          </Link>
         </div>
         <div className="flex">
           <div className="my-[1vw] ml-[0.6vw]">

@@ -11,6 +11,14 @@ import SearchResultUser from "./Components/Modals/LogOut"
 import EmojiClever from "../src/Assets/Svg/ModalSVG/EmojiBirth"
 import Button from "../src/Components/Modals/Button"
 
+import Panel from "./Pages/Panels/Panel";
+import AdminMainPage from "./Pages/Panels/Admin/AdminMainPage";
+import AdminLoansPage from "./Pages/Panels/Admin/AdminLoansPage";
+import AdminReportsPage from "./Pages/Panels/Admin/AdminReportsPage";
+import AdminNotificationsPage from "./Pages/Panels/Admin/AdminNotificationsPage";
+import UserMainPage from "./Pages/Panels/User/UserMainPage";
+import UserLoansPage from "./Pages/Panels/User/UserLoansPage";
+import UserNotificationsPage from "./Pages/Panels/User/UserNotificationsPage";
 
 function App() {
   return (
@@ -18,7 +26,7 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
-      <Route path="/SearchResultUser" element={<SearchResultUser emoji={<EmojiClever/>} textclassName={"top-[10vw]"} text={"کاربر عضوصندوق شد!"} text3={"لینک صندق براش فستاده میشه"} />} />
+      {/* <Route path="/SearchResultUser" element={<SearchResultUser emoji={<EmojiClever/>} textclassName={"top-[10vw]"} text={"کاربر عضوصندوق شد!"} text3={"لینک صندق براش فستاده میشه"} />} /> */}
           <Route path="/" element={<HomePage />}>
             <Route path="/" element={<MiddleSlide />} />
             <Route path="support" element={<Support />} />
@@ -27,6 +35,22 @@ function App() {
             <Route
               path="login/verificationcode"
               element={<VerificationCode />}
+            />
+          </Route>
+          <Route path="/panel" element={<Panel />}>
+            <Route path="admin/main" element={<AdminMainPage />} />
+            <Route path="admin/loans" element={<AdminLoansPage />} />
+            <Route path="admin/reports" element={<AdminReportsPage />} />
+            <Route
+              path="admin/notifications"
+              element={<AdminNotificationsPage />}
+            />
+
+            <Route path="user/main" element={<UserMainPage />} />
+            <Route path="user/loans" element={<UserLoansPage />} />
+            <Route
+              path="user/notifications"
+              element={<UserNotificationsPage />}
             />
           </Route>
         </Routes>
