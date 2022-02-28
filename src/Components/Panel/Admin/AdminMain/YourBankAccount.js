@@ -51,19 +51,19 @@ export default () => {
               </div>
               کپی کردن
             </div>
-            <div className="h-[0.1vw] mt-[1.3vw] w-[24.5vw] mr-[-1vw] m-auto bg-[#cecece]"></div>
+            <div className="h-[0.1vw] mt-[1.2vw] w-[24.5vw] mr-[-1vw] m-auto bg-[#cecece]"></div>
             <div className="w-[24.5vw] mr-[-1vw] flex  mt-[0.9vw] justify-between">
-              <div className="flex cursor-pointer font-bold text-[#00693b] bg-[#ccefe0] rounded-[0.7vw] mt-[-0.25vw] px-[2.5vw] py-[1.2vw] text-[1vw] ">
+              <div className="flex cursor-pointer font-bold text-[#00693b] bg-[#ccefe0] rounded-[0.7vw] mt-[-0.25vw] px-[1vw] py-[1.2vw] text-[1vw] ">
                 <div className="mt-[0.1vw]  ml-[0.5vw]">
                   <Plus />
                 </div>
-                افزودن اعضا
+                افزودن حساب جدید
               </div>
               <div className="flex cursor-pointer font-bold text-[#997919] bg-[#ffe694] rounded-[0.7vw] mt-[-0.25vw] px-[2vw] py-[1.2vw] text-[1vw] ">
                 <div className="mt-[0.2vw]  ml-[0.5vw]">
                   <Pen />
                 </div>
-                ویرایش صندوق
+                ویرایش حساب
               </div>
             </div>
           </div>

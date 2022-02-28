@@ -393,6 +393,11 @@ export default () => {
           </table>
         </div>
       </div>
+      <div className=" absolute mt-[53.5vw] flex items-start  mr-[33.5vw]   ">
+        <button className="text-[1vw] bg-[#fff] px-[2vw] py-[0.5vw] rounded-[0.8vw] drop-shadow-lg">
+          مشاهده ی همه
+        </button>
+      </div>
     </div>
   );
 };
