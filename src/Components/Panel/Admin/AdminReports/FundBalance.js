@@ -3,30 +3,54 @@ import DownFlesh from "../../../../Assets/Svg/ActiveLoansSVG/DownFlesh";
 import GreenPlus from "../../../../Assets/Svg/ActiveLoansSVG/GreenPlus";
 import OrangeMinus from "../../../../Assets/Svg/ActiveLoansSVG/OrangeMinus";
 import UpFlesh from "../../../../Assets/Svg/ActiveLoansSVG/UpFlesh";
-
+import { useState, useEffect } from "react";
 import { ResponsivePie } from "@nivo/pie";
 
 export default () => {
-  const data = [
+  const [data, setdata] = useState([
     {
       id: "وام های صندوق",
       label: "وام های صندوق",
-      value: 12000020,
+      value: 0,
       color: "#f58634",
     },
     {
       id: "موجودی باقیمانده",
       label: "موجودی باقیمانده",
-      value: 26780000,
+      value: 0,
       color: "#ffcc29",
     },
     {
       id: "موجودی صندوق",
       label: "موجودی صندوق",
-      value: 50000000,
+      value: 0,
       color: "#00af63",
     },
-  ];
+  ]);
+
+  useEffect(() => {
+    setdata([
+      {
+        id: "وام های صندوق",
+        label: "وام های صندوق",
+        value: 12000020,
+        color: "#f58634",
+      },
+      {
+        id: "موجودی باقیمانده",
+        label: "موجودی باقیمانده",
+        value: 26780000,
+        color: "#ffcc29",
+      },
+      {
+        id: "موجودی صندوق",
+        label: "موجودی صندوق",
+        value: 50000000,
+        color: "#00af63",
+      },
+    ]);
+  }, []);
+
   return (
     <div>
       <div className="hidescroll flex flex-col absolute pb-[2vw] mt-[5.5vw] mr-[68vw] w-[30vw] h-[52vw] overflow-y-auto overflow-x-hidden scroll-smooth  rounded-[0.8vw] border-[#c4c4c4] border-[0.155vw]">
@@ -44,7 +68,8 @@ export default () => {
             colors={{ datum: "data.color" }}
             innerRadius={0}
             padAngle={0}
-            animate={true}
+            motionConfig="slow"
+            transitionMode="pushIn"
             cornerRadius={0}
             activeOuterRadiusOffset={0}
             borderWidth={0}
@@ -92,7 +117,7 @@ export default () => {
           </div>
           <div className="flex items-center">
             <p>ماه</p>
-            <select className="bg-[#f2f2f2]  outline-none rounded-[0.7vw] mr-[1vw] px-[1vw] py-[0.5vw] w-[8vw]">
+            <select className="bg-[#f2f2f2] outline-none rounded-[0.7vw] mr-[1vw] px-[1vw] py-[0.5vw] w-[8vw]">
               <option>فروردین</option>
               <option>اردیبهشت</option>
               <option>خرداد</option>

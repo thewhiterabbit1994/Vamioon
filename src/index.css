@@ -43,3 +43,43 @@ td:last-child {
   border-top-left-radius: 0.78125vw;
   border-bottom-left-radius: 0.78125vw;
 }
+progress::-webkit-progress-bar {
+  background-color: #f2f2f2;
+  border-radius: 2vw;
+}
+progress {
+  background-color: #f2f2f2;
+  border-radius: 2vw;
+}
+
+progress::-moz-progress-bar {
+  background-color: #f2f2f2;
+  border-radius: 2vw;
+}
+
+progress::-webkit-progress-value {
+  border-bottom-right-radius: 2vw;
+  border-top-right-radius: 2vw;
+}
+progress::-webkit-progress-value {
+  transform: scaleX(1);
+  transform-origin: bottom;
+  transition: all 2s ease;
+}
+
+.barRounded::-webkit-progress-value {
+  border-radius: 2vw;
+}
+.progressfirstcolor::-webkit-progress-value {
+  background-color: #00af63;
+}
+
+.progresssecondcolor::-webkit-progress-value {
+  background-color: #038b79;
+}
+.progressthirdcolor::-webkit-progress-value {
+  background-color: #f58634;
+}
+.progressforthcolor::-webkit-progress-value {
+  background-color: #ffcc29;
+}

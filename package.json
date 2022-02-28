@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.19",
+    "@nivo/core": "^0.79.0",
     "@nivo/pie": "^0.79.1",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",

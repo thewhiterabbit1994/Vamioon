@@ -151,7 +151,7 @@ export default () => {
                   نام دریافت کننده ی وام
                 </th>
                 <th className="text-right">مبلغ وام</th>
-                <th className="text-right">تعدا اقساط</th>
+                <th className="text-right">تعداد اقساط</th>
                 <th className="text-right">نوع وام</th>
                 <th className="text-right">تاریخ تسویه</th>
               </tr>
