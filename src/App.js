@@ -9,7 +9,7 @@ import Login from "./Pages/Login";
 import VerificationCode from "./Pages/VerificationCode";
 import SearchResultUser from "./Components/Modals/LogOut"
 import EmojiClever from "../src/Assets/Svg/ModalSVG/EmojiBirth"
-import Button from "../src/Components/Modals/Button"
+import Button from "./Components/Modals/Buttons"
 
 import Panel from "./Pages/Panels/Panel";
 import AdminMainPage from "./Pages/Panels/Admin/AdminMainPage";

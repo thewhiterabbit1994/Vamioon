@@ -4,10 +4,26 @@ import CartBg from "../../../../Assets/Svg/YourAccount/CartBg";
 import Copy from "../../../../Assets/Svg/YourAccount/Copy";
 import Pen from "../../../../Assets/Svg/YourFundSVG/Pen";
 import Plus from "../../../../Assets/Svg/YourFundSVG/Plus";
+import { useState } from "react";
+import AddBankAcount from "../../../Modals/AddBankAcount"
+import EditBankAcount from "../../../Modals/EditBankAcount"
+import Copied from "../../../Modals/Copied"
+
 
 export default () => {
+  const [modalAddBankCount, setmodalAddBankCount] = useState(false)
+  const [modalEditBankAcount, setmodalEditBankAcount] = useState(false)
+  const [MessageCopied, setMessageCopied] = useState(false)
+
+  setTimeout(() => {
+    if (MessageCopied === true) {
+      setMessageCopied(false)
+    }
+  }, 2000)
   return (
     <div className="absolute h-[17.4vw] mt-[40vw] mr-[50vw] w-[48vw]  rounded-[0.8vw] border-[#c4c4c4] border-[0.155vw]">
+      <EditBankAcount modalEditBankAcount={modalEditBankAcount} setmodalEditBankAcount={setmodalEditBankAcount} />
+      <AddBankAcount modalAddBankCount={modalAddBankCount} setmodalAddBankCount={setmodalAddBankCount} />
       <div className="absolute  bg-white w-[39.7vw] h-[3.5vw] rounded-t-[0.8vw]  text-[1.1vw] ">
         <div className="flex mr-[1vw] my-[1vw]">
           <div className="mt-[0.3vw]">
@@ -45,25 +61,34 @@ export default () => {
               <p className="">شماره حساب</p>
               <p className=" font-bold pb-[0.5vw]">6219861908242034</p>
             </div>
-            <div className="flex cursor-pointer justify-center items-center bg-[#c4c4c4] rounded-[0.7vw] mt-[-0.25vw] mr-[-0.2vw] w-[23.046875vw] h-[1.953125vw] text-[0.8vw] ">
+            <div
+              onClick={() => setMessageCopied(true)}
+              className="flex cursor-pointer justify-center items-center bg-[#c4c4c4] rounded-[0.7vw] mt-[-0.25vw] mr-[-0.2vw] w-[23.046875vw] h-[1.953125vw] text-[0.8vw] ">
               <div className="mt-[0.2vw] ml-[0.5vw]">
                 <Copy />
               </div>
               کپی کردن
             </div>
+            <div className={`${!MessageCopied ? "fixed bottom-[-14.64vw]" : "fixed bottom-[5.85vw] left-[7.32vw] transition-all duration-[500ms]"}`}>
+              <Copied />
+            </div>
             <div className="h-[0.1vw] mt-[1.3vw] w-[24.5vw] mr-[-1vw] m-auto bg-[#cecece]"></div>
             <div className="w-[24.5vw] mr-[-1vw] flex  mt-[0.9vw] justify-between">
-              <div className="flex cursor-pointer font-bold text-[#00693b] bg-[#ccefe0] rounded-[0.7vw] mt-[-0.25vw] px-[2.5vw] py-[1.2vw] text-[1vw] ">
+              <div
+                onClick={() => setmodalAddBankCount(true)}
+                className="flex cursor-pointer font-bold text-[#00693b] bg-[#ccefe0] rounded-[0.7vw] mt-[-0.25vw] px-[1vw] py-[1.2vw] text-[1vw] ">
                 <div className="mt-[0.1vw]  ml-[0.5vw]">
                   <Plus />
                 </div>
-                افزودن اعضا
+                افزودن حساب جدید
               </div>
-              <div className="flex cursor-pointer font-bold text-[#997919] bg-[#ffe694] rounded-[0.7vw] mt-[-0.25vw] px-[2vw] py-[1.2vw] text-[1vw] ">
+              <div
+                onClick={() => setmodalEditBankAcount(true)}
+                className="flex cursor-pointer font-bold text-[#997919] bg-[#ffe694] rounded-[0.7vw] mt-[-0.25vw] px-[2vw] py-[1.2vw] text-[1vw] ">
                 <div className="mt-[0.2vw]  ml-[0.5vw]">
                   <Pen />
                 </div>
-                ویرایش صندوق
+                ویرایش حساب
               </div>
             </div>
           </div>
