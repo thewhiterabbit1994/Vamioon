@@ -2,10 +2,17 @@ import YourFund from "../../../../Assets/Svg/YourFundSVG/YourFund";
 import Send from "../../../../Assets/Svg/YourFundSVG/Send";
 import Pen from "../../../../Assets/Svg/YourFundSVG/Pen";
 import Plus from "../../../../Assets/Svg/YourFundSVG/Plus";
+import AddMember from "../../../Modals/AddMember"
+import EditCashDesk from "../../../Modals/EditCashDesk"
+import { useState } from "react"
 
 export default () => {
+  const [ModalAddMember, setModalAddMember] = useState(false)
+  const [ModalEditCashdesk, setModalEditCashdesk] = useState(false)
   return (
     <div className="absolute h-[33.75vw] mt-[5.5vw] mr-[50vw] w-[48vw]  rounded-[0.8vw] border-[#c4c4c4] border-[0.155vw]">
+      <AddMember ModalAddMember={ModalAddMember} setModalAddMember={setModalAddMember} />
+      <EditCashDesk ModalEditCashdesk={ModalEditCashdesk} setModalEditCashdesk={setModalEditCashdesk}/>
       <div className="absolute  bg-white w-[39.7vw] h-[3.5vw] rounded-t-[0.8vw]  text-[1.1vw] ">
         <div className="flex mr-[1vw] my-[1vw]">
           <YourFund />
@@ -56,13 +63,17 @@ export default () => {
       </div>
       <div className="h-[0.1vw] my-[1vw] w-[95.5%] m-auto bg-[#cecece]"></div>
       <div className="w-full flex px-[1vw] mt-[1.4vw] justify-between">
-        <div className="flex cursor-pointer font-bold text-[#00693b] bg-[#ccefe0] rounded-[0.7vw] mt-[-0.25vw] px-[2.5vw] py-[1.2vw] text-[1vw] ">
+        <div
+          onClick={() => setModalAddMember(true)}
+          className="flex cursor-pointer font-bold z-10 text-[#00693b] bg-[#ccefe0] rounded-[0.7vw] mt-[-0.25vw] px-[2.5vw] py-[1.2vw] text-[1vw] ">
           <div className="mt-[0.1vw]  ml-[0.5vw]">
             <Plus />
           </div>
           افزودن اعضا
         </div>
-        <div className="flex cursor-pointer font-bold text-[#997919] bg-[#ffe694] rounded-[0.7vw] mt-[-0.25vw] px-[2vw] py-[1.2vw] text-[1vw] ">
+        <div
+          onClick={() => setModalEditCashdesk(true)}
+          className="flex cursor-pointer font-bold text-[#997919] bg-[#ffe694] rounded-[0.7vw] mt-[-0.25vw] px-[2vw] py-[1.2vw] text-[1vw] ">
           <div className="mt-[0.2vw]  ml-[0.5vw]">
             <Pen />
           </div>
