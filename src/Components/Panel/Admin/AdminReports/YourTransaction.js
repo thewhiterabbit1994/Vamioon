@@ -21,7 +21,7 @@ export default () => {
   });
   useEffect(() => {
     setprogressBarValues({
-      bar1: 90,
+      bar1: 96,
       bar2: 40,
       bar3: 60,
       bar4: 50,
@@ -179,7 +179,7 @@ export default () => {
         <div className="mt-[10vw] flex w-full h-[7.5vw] justify-between ">
           <progress
             className={`progressfirstcolor rotate-90 rounded-[10px] w-[50vw] h-[1.5vw] bg-[#f2f2f2] mx-[-4vw]
-            ${progressBarValues.bar1 >= 95 ? "barRounded" : ""}
+              
             `}
             value={progressBarValues.bar1}
             max={100}
@@ -187,7 +187,7 @@ export default () => {
 
           <progress
             className={`progresssecondcolor rotate-90 rounded-[10px] w-[50vw] h-[1.5vw] bg-[#f2f2f2] mx-[-4vw]
-            ${progressBarValues.bar2 >= 95 ? "barRounded" : ""}
+           
             `}
             value={progressBarValues.bar2}
             max={100}
@@ -195,7 +195,7 @@ export default () => {
 
           <progress
             className={`progressthirdcolor rotate-90 rounded-[10px] w-[50vw] h-[1.5vw] bg-[#f2f2f2] mx-[-4vw]
-            ${progressBarValues.bar3 >= 95 ? "barRounded" : ""}
+            
             `}
             value={progressBarValues.bar3}
             max={100}
@@ -203,7 +203,7 @@ export default () => {
 
           <progress
             className={`progressforthcolor rotate-90 rounded-[10px] w-[50vw] h-[1.5vw] bg-[#f2f2f2] mx-[-4vw]
-            ${progressBarValues.bar4 >= 95 ? "barRounded" : ""}
+            
             `}
             value={progressBarValues.bar4}
             max={100}
@@ -211,7 +211,7 @@ export default () => {
 
           <progress
             className={`progressfirstcolor rotate-90 rounded-[10px] w-[50vw] h-[1.5vw] bg-[#f2f2f2] mx-[-4vw]
-            ${progressBarValues.bar5 >= 95 ? "barRounded" : ""}
+           
             `}
             value={progressBarValues.bar5}
             max={100}
@@ -219,7 +219,7 @@ export default () => {
 
           <progress
             className={`progresssecondcolor rotate-90 rounded-[10px] w-[50vw] h-[1.5vw] bg-[#f2f2f2] mx-[-4vw]
-            ${progressBarValues.bar6 >= 95 ? "barRounded" : ""}
+           
             `}
             value={progressBarValues.bar6}
             max={100}
@@ -227,7 +227,7 @@ export default () => {
 
           <progress
             className={`progressthirdcolor rotate-90 rounded-[10px] w-[50vw] h-[1.5vw] bg-[#f2f2f2] mx-[-4vw]
-            ${progressBarValues.bar7 >= 95 ? "barRounded" : ""}
+
             `}
             value={progressBarValues.bar7}
             max={100}
@@ -235,7 +235,7 @@ export default () => {
 
           <progress
             className={`progressforthcolor rotate-90 rounded-[10px] w-[50vw] h-[1.5vw] bg-[#f2f2f2] mx-[-4vw]
-            ${progressBarValues.bar8 >= 95 ? "barRounded" : ""}
+           
             `}
             value={progressBarValues.bar8}
             max={100}
@@ -243,7 +243,7 @@ export default () => {
 
           <progress
             className={`progressfirstcolor rotate-90 rounded-[10px] w-[50vw] h-[1.5vw] bg-[#f2f2f2] mx-[-4vw]
-            ${progressBarValues.bar9 >= 95 ? "barRounded" : ""}
+
             `}
             value={progressBarValues.bar9}
             max={100}
@@ -251,7 +251,7 @@ export default () => {
 
           <progress
             className={`progresssecondcolor rotate-90 rounded-[10px] w-[50vw] h-[1.5vw] bg-[#f2f2f2] mx-[-4vw]
-            ${progressBarValues.bar10 >= 95 ? "barRounded" : ""}
+           
             `}
             value={progressBarValues.bar10}
             max={100}
@@ -259,7 +259,7 @@ export default () => {
 
           <progress
             className={`progressthirdcolor rotate-90 rounded-[10px] w-[50vw] h-[1.5vw] bg-[#f2f2f2] mx-[-4vw]
-            ${progressBarValues.bar11 >= 95 ? "barRounded" : ""}
+           
             `}
             value={progressBarValues.bar11}
             max={100}
@@ -267,7 +267,7 @@ export default () => {
 
           <progress
             className={`progressforthcolor rotate-90 rounded-[10px] w-[50vw] h-[1.5vw] bg-[#f2f2f2] mx-[-4vw]
-            ${progressBarValues.bar12 >= 95 ? "barRounded" : ""}
+           
             `}
             value={progressBarValues.bar12}
             max={100}
@@ -348,7 +348,10 @@ export default () => {
             <tbody className=" ">
               {loans.map((loan, i) => {
                 return (
-                  <tr className="text-[1vw] h-[3vw] mb-[5vw] bg-[#f2f2f2]  leading-[3.125vw] ">
+                  <tr
+                    key={i}
+                    className="text-[1vw] h-[3vw] mb-[5vw] bg-[#f2f2f2]  leading-[3.125vw] "
+                  >
                     <td className="pr-[1.2vw]">{loan.loanType} </td>
                     <td className="">
                       <div className="flex">

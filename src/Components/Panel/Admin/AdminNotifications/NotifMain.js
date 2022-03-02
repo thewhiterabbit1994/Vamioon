@@ -229,7 +229,10 @@ export default () => {
           <tbody className={`${openTab === 1 ? "" : "hidden"}`}>
             {installmentPayments.map((installmentPayment, i) => {
               return (
-                <tr className="text-[1vw] h-[3vw] mb-[5vw] bg-[#f2f2f2]  leading-[4.6vw] ">
+                <tr
+                  key={i}
+                  className="text-[1vw] h-[3vw] mb-[5vw] bg-[#f2f2f2]  leading-[4.6vw] "
+                >
                   <td className="pr-[1.2vw]">
                     <div className=" flex">
                       <div className="w-[0.5vw] h-[3vw] mr-[-1.2vw] ml-[1vw] mt-[0.8vw] rounded-[0.3vw] bg-[#00af63] "></div>
@@ -267,7 +270,10 @@ export default () => {
           <tbody className={`${openTab === 2 ? "" : "hidden"}`}>
             {joinRequests.map((joinRequest, i) => {
               return (
-                <tr className="text-[1vw] h-[3vw] mb-[5vw] bg-[#f2f2f2]  leading-[4.6vw] ">
+                <tr
+                  key={i}
+                  className="text-[1vw] h-[3vw] mb-[5vw] bg-[#f2f2f2]  leading-[4.6vw] "
+                >
                   <td className="pr-[1.2vw]">
                     <div className=" flex">
                       <div className="w-[0.5vw] h-[3vw] mr-[-1.2vw] ml-[1vw] mt-[0.8vw] rounded-[0.3vw] bg-[#ffcc29] "></div>
@@ -305,7 +311,10 @@ export default () => {
           <tbody className={`${openTab === 3 ? "" : "hidden"}`}>
             {loanRequests.map((loanRequest, i) => {
               return (
-                <tr className="text-[1vw] h-[3vw] mb-[5vw] bg-[#f2f2f2]  leading-[4.6vw] ">
+                <tr
+                  key={i}
+                  className="text-[1vw] h-[3vw] mb-[5vw] bg-[#f2f2f2]  leading-[4.6vw] "
+                >
                   <td className="pr-[1.2vw]">
                     <div className=" flex">
                       <div className="w-[0.5vw] h-[3vw] mr-[-1.2vw] ml-[1vw] mt-[0.8vw] rounded-[0.3vw] bg-[#f58634] "></div>

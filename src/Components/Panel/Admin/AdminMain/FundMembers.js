@@ -128,7 +128,10 @@ export default () => {
             <tbody className=" ">
               {member.map((member, i) => {
                 return (
-                  <tr className="text-[1vw] h-[3vw] mb-[5vw] bg-[#f2f2f2] rounded-[0.78vw] border-[white]  border-[0.625vw] leading-[3.125vw] ">
+                  <tr
+                    key={i}
+                    className="text-[1vw] h-[3vw] mb-[5vw] bg-[#f2f2f2] rounded-[0.78vw] border-[white]  border-[0.625vw] leading-[3.125vw] "
+                  >
                     <td className="text-center">{i + 1}</td>
                     <td>
                       <img
