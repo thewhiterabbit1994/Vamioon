@@ -36,7 +36,7 @@ export default () => {
 
   return (
     <div>
-      <div className="hidescroll flex flex-col absolute pb-[2vw] mt-[32.5vw] mr-[9vw] w-[89vw] h-[24vw] overflow-y-auto overflow-x-hidden scroll-smooth  rounded-[0.8vw] border-[#c4c4c4] border-[0.155vw]">
+      <div className="hidescroll flex flex-col absolute pb-[2vw] mt-[32.5vw] mr-[9vw] w-[89vw] h-[25vw] overflow-y-auto overflow-x-hidden scroll-smooth  rounded-[0.8vw] border-[#c4c4c4] border-[0.155vw]">
         <div className="absolute  bg-white w-[39.7vw] h-[3.5vw] rounded-t-[0.8vw]  text-[1.1vw] ">
           <div className="flex w-[89vw] px-[1vw] mt-[1vw] text-[1.1vw] items-center justify-between">
             <div className="flex">
@@ -56,7 +56,7 @@ export default () => {
           </div>
         </div>
 
-        <div className="flex">
+        <div className="flex mt-[0.4vw]">
           <div className="w-[49.2vw]">
             <div className="mt-[11vw] flex w-[55.5% h-[7.5vw] justify-between ">
               <progress
