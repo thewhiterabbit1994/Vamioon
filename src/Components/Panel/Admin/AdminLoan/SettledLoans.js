@@ -159,7 +159,10 @@ export default () => {
             <tbody className=" ">
               {loans.map((loan, i) => {
                 return (
-                  <tr className="text-[1vw] h-[3vw] mb-[5vw] bg-[#f2f2f2]  leading-[3.125vw] ">
+                  <tr
+                    key={i}
+                    className="text-[1vw] h-[3vw] mb-[5vw] bg-[#f2f2f2]  leading-[3.125vw] "
+                  >
                     <td className="">
                       <div className="flex">
                         <img

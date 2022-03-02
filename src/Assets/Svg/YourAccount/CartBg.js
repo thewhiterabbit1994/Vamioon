@@ -23,9 +23,9 @@ export default () => (
         width="303"
         height="172"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -45,8 +45,8 @@ export default () => (
         y2="132"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#006FB8a0" />
-        <stop offset="1" stop-color="#7CD0F5a0" />
+        <stop stopColor="#006FB8a0" />
+        <stop offset="1" stopColor="#7CD0F5a0" />
       </linearGradient>
     </defs>
   </svg>

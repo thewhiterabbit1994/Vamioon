@@ -50,6 +50,7 @@ progress::-webkit-progress-bar {
 progress {
   background-color: #f2f2f2;
   border-radius: 2vw;
+  overflow: hidden;
 }
 
 progress::-moz-progress-bar {
@@ -67,9 +68,6 @@ progress::-webkit-progress-value {
   transition: all 2s ease;
 }
 
-.barRounded::-webkit-progress-value {
-  border-radius: 2vw;
-}
 .progressfirstcolor::-webkit-progress-value {
   background-color: #00af63;
 }

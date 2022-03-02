@@ -69,12 +69,12 @@ export default () => {
     .replace("۸", persianMonth[7])
     .replace("۹", persianMonth[8]);
   const year = sepratedDate[0];
-  console.log("---------------------------------------");
-  console.log("year is :", year);
-  console.log("month is :", month);
-  console.log("day is :", day);
-  console.log("full date is :", date);
-  console.log("---------------------------------------");
+  // console.log("---------------------------------------");
+  // console.log("year is :", year);
+  // console.log("month is :", month);
+  // console.log("day is :", day);
+  // console.log("full date is :", date);
+  // console.log("---------------------------------------");
   return (
     <>
       <UserProfile ModalUserProfile={ModalUserProfile} setModalUserProfile={setModalUserProfile} />

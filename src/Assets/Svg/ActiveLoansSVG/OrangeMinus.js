@@ -9,8 +9,8 @@ export default () => (
     <path
       d="M1 1C1.23704 1 6.4321 1 9 1"
       stroke="#DD792F"
-      stroke-width="2"
-      stroke-linecap="round"
+      strokeWidth="2"
+      strokeLinecap="round"
     />
   </svg>
 );

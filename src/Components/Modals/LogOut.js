@@ -1,4 +1,3 @@
-import CloseModal from "../../Assets/Svg/ModalSVG/CloseModal"
 export default ({ text, textClassName = " w-[17.5vw] fixed flex justify-center m-auto top-[5.5vw]", emoji, CloseModal, Button, text2, text3, textclassName = ' w-[17.5vw] fixed flex justify-center text-[#818181] text-[0.90vw]  m-auto top-[8vw]' }) => {
     return (
         <section className="drop-shadow-lg relative bg-[#fff] m-auto w-[17.5vw] h-[14vw] rounded-[.73vw] mt-[1vw]">
