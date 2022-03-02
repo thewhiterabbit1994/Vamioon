@@ -10,8 +10,10 @@ import adminImg from "../../Assets/Img/UserProfileImg.jpg";
 import Arrow from "../../Assets/Svg/HeaderSVG/Arrow";
 import UserSettingModal from "../../Assets/Svg/UserSettingModalSVG/UserSettingModal";
 import Sandoq from "../../Assets/Svg/HeaderSVG/Sandoq";
+import UserProfile from "../../Components/Modals/UserProfile"
 
 export default () => {
+  const [ModalUserProfile, setModalUserProfile] = useState(false)
   let location = useLocation();
 
   const [isUserSettingModalDisplay, setisUserSettingModalDisplay] =
@@ -75,16 +77,16 @@ export default () => {
   console.log("---------------------------------------");
   return (
     <>
+      <UserProfile ModalUserProfile={ModalUserProfile} setModalUserProfile={setModalUserProfile} />
       <div
         className={`
-    ${
-      location.pathname === "/panel/admin/main" ||
-      location.pathname === "/panel/admin/loans" ||
-      location.pathname === "/panel/admin/reports" ||
-      location.pathname === "/panel/admin/notifications"
-        ? "w-[90vw] mr-[9vw] fixed top-0 z-10 bg-white h-[5vw] flex justify-between items-center"
-        : "hidden"
-    }
+    ${location.pathname === "/panel/admin/main" ||
+            location.pathname === "/panel/admin/loans" ||
+            location.pathname === "/panel/admin/reports" ||
+            location.pathname === "/panel/admin/notifications"
+            ? "w-[90vw] mr-[9vw] fixed top-0 z-10 bg-white h-[5vw] flex justify-between items-center"
+            : "hidden"
+          }
      `}
       >
         <div className="flex  justify-between items-center">
@@ -105,12 +107,12 @@ export default () => {
             {location.pathname === "/panel/admin/main"
               ? " پنل کاربری"
               : location.pathname === "/panel/admin/loans"
-              ? "وام ها"
-              : location.pathname === "/panel/admin/reports"
-              ? "گزارشات"
-              : location.pathname === "/panel/admin/notifications"
-              ? "اعلان ها"
-              : ""}
+                ? "وام ها"
+                : location.pathname === "/panel/admin/reports"
+                  ? "گزارشات"
+                  : location.pathname === "/panel/admin/notifications"
+                    ? "اعلان ها"
+                    : ""}
           </p>
         </div>
         <div className="flex justify-between items-center">
@@ -151,11 +153,14 @@ export default () => {
             </div>
           </div>
           <div
-            className={`translate transition-opacity absolute top-[3.2vw] left-[0.5vw] opacity-100  ${
-              isUserSettingModalDisplay
-                ? "cursor-pointer"
-                : "opacity-0 scale-0 "
-            } `}
+            onClick={() => 
+            (  setModalUserProfile(true),
+              setisUserSettingModalDisplay(false))
+            }
+            className={`translate  transition-opacity absolute top-[3.2vw] left-[0.5vw] opacity-100  ${isUserSettingModalDisplay
+              ? "cursor-pointer"
+              : "opacity-0 scale-0 "
+              } `}
           >
             <UserSettingModal />
           </div>
@@ -163,14 +168,13 @@ export default () => {
       </div>
       <div
         className={`
-    ${
-      location.pathname === "/panel/user/main" ||
-      location.pathname === "/panel/user/loans" ||
-      location.pathname === "/panel/user/reports" ||
-      location.pathname === "/panel/user/notifications"
-        ? "w-[90vw] mr-[9vw] fixed top-0 z-10 bg-white h-[5vw] flex justify-between items-center"
-        : "hidden"
-    }
+    ${location.pathname === "/panel/user/main" ||
+            location.pathname === "/panel/user/loans" ||
+            location.pathname === "/panel/user/reports" ||
+            location.pathname === "/panel/user/notifications"
+            ? "w-[90vw] mr-[9vw] fixed top-0 z-10 bg-white h-[5vw] flex justify-between items-center"
+            : "hidden"
+          }
      `}
       >
         <div className="flex justify-between items-center">
@@ -189,10 +193,10 @@ export default () => {
             {location.pathname === "/panel/user/main"
               ? "صندوق همکاران شرکت"
               : location.pathname === "/panel/user/loans"
-              ? "وام ها"
-              : location.pathname === "/panel/user/notifications"
-              ? "اعلان ها"
-              : ""}
+                ? "وام ها"
+                : location.pathname === "/panel/user/notifications"
+                  ? "اعلان ها"
+                  : ""}
           </p>
         </div>
         <div className="flex justify-between items-center">
@@ -233,11 +237,10 @@ export default () => {
             </div>
           </div>
           <div
-            className={`translate transition-opacity absolute top-[3.2vw] left-[0.5vw] opacity-100  ${
-              isUserSettingModalDisplay
-                ? "cursor-pointer"
-                : "opacity-0 scale-0 "
-            } `}
+            className={`translate transition-opacity  absolute top-[3.2vw] left-[0.5vw] opacity-100  ${isUserSettingModalDisplay
+              ? "cursor-pointer"
+              : "opacity-0 scale-0 "
+              } `}
           >
             <UserSettingModal />
           </div>

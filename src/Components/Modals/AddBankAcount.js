@@ -9,6 +9,11 @@ export default ({ setmodalAddBankCount, modalAddBankCount }) => {
   const [styleBorderNameOfAccountHolder, setstyleBorderNameOfAccountHolder] = useState(false)
   const [styleBorderShabanumber, setstyleBorderShabanumber] = useState(false)
   const [styleBorderKartNumber, setstyleBorderKartNumber] = useState(false)
+  const [NameOfAccountHolder, setNameOfAccountHolder] = useState("رها تمدن")
+  const [AccountNum, setAccountNum] = useState("62210612089")
+  const [sheba, setSheba] = useState("6221061208872459")
+  const [NumberOfKart, setNumberOfKart] = useState("6221061208872459")
+  const [Ir, seIR] = useState(false)
 
   return (
     <>
@@ -50,7 +55,8 @@ export default ({ setmodalAddBankCount, modalAddBankCount }) => {
                   <p className="pt-[.4vw]"> نام صاحب حساب</p>
                 </label>
                 <input
-                  value={"رها تمدن"}
+                  onChange={(e) => setNameOfAccountHolder(e.target.value)}
+                  value={NameOfAccountHolder}
                   id="NameOfAccountHolder1"
                   className="w-[19.76vw] bg-[#ffffff15]  h-[2.19vw] mt-[0.36vw] pr-[.3vw] outline-none "
                 />
@@ -72,7 +78,10 @@ export default ({ setmodalAddBankCount, modalAddBankCount }) => {
                   <p className="pt-[.2vw]"> شماره حساب</p>
                 </label>
                 <input
-                  value={"62210612089"}
+                  type="number"
+                  onInput={(e) => e.target.value = e.target.value.slice(0, 11)}
+                  onChange={(e) => setAccountNum(e.target.value)}
+                  value={AccountNum}
                   id="account num1"
                   className="w-[19.76vw] bg-[#ffffff15]  h-[2.19vw] mt-[0.36vw] outline-none "
                 />
@@ -93,11 +102,17 @@ export default ({ setmodalAddBankCount, modalAddBankCount }) => {
                   <Loanamount />
                   <p className="pt-[.2vw]"> شماره شبا</p>
                 </label>
-                <input
-                  value={"IR6221061208872459"}
-                  id="Shabanumber1"
-                  className="w-[19.76vw] bg-[#ffffff15]  h-[2.19vw] mt-[0.36vw] outline-none "
-                />
+                <div className="flex items-center w-[8.5vw]">
+                  <input
+                    onInput={(e) => e.target.value = e.target.value.slice(0, 16)}
+                    type="number"
+                    onChange={(e) => setSheba(e.target.value)}
+                    value={sheba}
+                    id="Shabanumber1"
+                    className=" bg-[#ffffff15] w-[8.7vw] h-[2.19vw] mt-[0.36vw] outline-none "
+                  />
+                  <p className={`mt-[.3vw]`}>IR</p>
+                </div>
               </section>
               <section
                 onClick={() =>
@@ -119,7 +134,9 @@ export default ({ setmodalAddBankCount, modalAddBankCount }) => {
                   <p className="pt-[.2vw]">(بدون فاصله وارد کنید)</p>
                 </label>
                 <input
-                  value={"6221061208872459"}
+                  onInput={(e) => e.target.value = e.target.value.slice(0, 16)}
+                  onChange={(e) => setNumberOfKart(e.target.value)}
+                  value={NumberOfKart}
                   id="KartNumber1"
                   className="w-[19.76vw] bg-[#ffffff15]  h-[2.19vw] mt-[0.36vw] outline-none "
                 />

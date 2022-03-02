@@ -19,7 +19,7 @@ export default () => {
     if (MessageCopied === true) {
       setMessageCopied(false)
     }
-  }, 2000)
+  }, 4000)
   return (
     <div className="absolute h-[17.4vw] mt-[40vw] mr-[50vw] w-[48vw]  rounded-[0.8vw] border-[#c4c4c4] border-[0.155vw]">
       <EditBankAcount modalEditBankAcount={modalEditBankAcount} setmodalEditBankAcount={setmodalEditBankAcount} />
@@ -69,7 +69,7 @@ export default () => {
               </div>
               کپی کردن
             </div>
-            <div className={`${!MessageCopied ? "fixed bottom-[-14.64vw]" : "fixed bottom-[5.85vw] left-[7.32vw] transition-all duration-[500ms]"}`}>
+            <div className={`${!MessageCopied ? "fixed bottom-[-200px]" : "fixed bottom-[5.9vw] left-[7.5vw] transition-all duration-[500ms]"}`}>
               <Copied />
             </div>
             <div className="h-[0.1vw] mt-[1.3vw] w-[24.5vw] mr-[-1vw] m-auto bg-[#cecece]"></div>

@@ -12,15 +12,33 @@ export default ({ ModalReminderOfPaymentDeadline, setModalReminderOfPaymentDeadl
   const [styleBorderCategoriesSubmit, setstyleBorderCategoriesSubmit] = useState(false)
   const [styleBorderTextMessage, setstyleBorderTextMessage] = useState(false)
   const [drop, setDreop] = useState(false)
-  console.log(ModalReminderOfPaymentDeadline);
+  const [User, setUser] = useState("رها تمدن")
+  const [TxtMessage, setTxtMessage] = useState("رهای عزیز لطفا قسط وام خودت رو فراموش نکن")
+  const [inerHtmlElementDrop, setinerHtmlElementDrop] = useState({
+    valueDrop: "ارسال پیامک به شماره  09121361559   "
+  })
+  const [valueDrop, setvalueDrop] = useState([
+    {
+      valueDrop: "ارسال پیامک به شماره 09121361559  "
+    },
+    {
+      valueDrop: "ارسال پیامک به شماره 09121361559  "
+    },
+    {
+      valueDrop: "ارسال پیامک به شماره 09128586645 "
+    },
+  ])
+  const GetValueDrop = (item) => {
+    setinerHtmlElementDrop(item)
+  }
   return (
     <>
       <section
-        onClick={() =>setModalReminderOfPaymentDeadline(false)}
+        onClick={() => setModalReminderOfPaymentDeadline(false)}
         className={`fixed transform transition-opacity duration-300 flex justify-center items-center  scale-0 z-30 w-full h-screen right-0 bottom-0 mt-[-200px] bg-[#00000071]  ${ModalReminderOfPaymentDeadline ? "scale-100 opacity-100" : "opacity-0 "
           }`}>
       </section>
-      <div className=" z-50 fixed top-[2%] left-[37%]">
+      <div className=" z-50 fixed top-[10%] left-[37%]">
         {
           ModalReminderOfPaymentDeadline ?
             <section className="w-[24.15vw] h-[30.5vw] mt-[2.9vw] bg-[#fff] drop-shadow-lg rop-shadow-lg m-auto text-[#4D4D4D] rounded-[1.024vw] ">
@@ -30,7 +48,7 @@ export default ({ ModalReminderOfPaymentDeadline, setModalReminderOfPaymentDeadl
                   <p className="pt-[.5vw]"> یادآوری موعد پرداخت </p>
                 </div>
                 <div
-                  onClick={() =>setModalReminderOfPaymentDeadline(false)}
+                  onClick={() => setModalReminderOfPaymentDeadline(false)}
                   className="cursor-pointer"
                 >
                   <CloseModal />
@@ -58,7 +76,8 @@ export default ({ ModalReminderOfPaymentDeadline, setModalReminderOfPaymentDeadl
                     src={imageProfile}
                   />
                   <input
-                    value={"رها تمدن"}
+                    onChange={(e) => setUser(e.target.value)}
+                    value={User}
                     id="setstyleBorderUser"
                     className="w-[19.76vw] bg-[#ffffff15]  h-[2.19vw] mt-[0.36vw] mr-[.4vw] pr-[.3vw] outline-none "
                   />
@@ -80,16 +99,24 @@ export default ({ ModalReminderOfPaymentDeadline, setModalReminderOfPaymentDeadl
                   <p className="pt-[.2vw]"> ارسال یادآوری به صورت</p>
                 </label>
                 <div className="w-[19vw] items-center  flex justify-between mt-[1.098vw]">
-                  <p>ارسال پیامک به شماره09120411848</p>
+                  <p>{inerHtmlElementDrop.valueDrop}</p>
                   <div
                     onClick={() => setDreop(!drop)}
                     className={`cursor-pointer relative`}>
-                    <Drop />
-                    <div className={`w-[7.320vw] absolute left-[- 0.732vw] h-[7.320vw] mt-[0.585vw] rounded-lg bg-[#ffffff] 
-                         ${drop ? "w-[7.320vw] absolute left-[-0.732vw] h-[7.320vw] rounded-[0.585vw] " : "hidden"}`}>
-                      <p className="w-[7.320vw] h-[2.17vw] hover:bg-[#00000018] rounded-lg my-[0.366vw] flex items-center justify-center ">پیامک</p>
-                      <p className="w-[7.320vw] h-[2.17vw] text-center hover:bg-[#00000018] rounded-[0.585vw] flex items-center justify-center ">پیامک </p>
-                      <p className="w-[7.320vw] h-[2.17vw] text-center hover:bg-[#00000018] rounded-[0.585vw] my-[0.366vw] flex items-center justify-center ">پیامک</p>
+                    <div className="mb-[.5vw]">
+                      <Drop />
+                    </div>
+                    <div className={`w-[15.vw] absolute left-[- 0.732vw] h-[7.320vw] mt-[0.585vw] rounded-lg  bg-[#fff] drop-shadow-2xl
+                      ${drop ? "w-[15vw] absolute left-[-0.732vw] h-[7.320vw] rounded-[0.585vw] " : "hidden"}`}>
+                      {
+                        valueDrop.map(item => {
+                          return <div>
+                            <p
+                              onClick={() => GetValueDrop(item)}
+                              className="w-[15vw] h-[2.17vw] hover:bg-[#00000044] rounded-lg my-[0.366vw] flex items-center justify-center ">{item.valueDrop}</p>
+                          </div>
+                        })
+                      }
                     </div>
                   </div>
                 </div>
@@ -111,7 +138,8 @@ export default ({ ModalReminderOfPaymentDeadline, setModalReminderOfPaymentDeadl
                   <p className="pt-[.2vw]"> متن پیامک</p>
                 </label>
                 <textarea
-                  value={"رهای عزیز لطفا قسط وام خودت رو فراموش نکن"}
+                  onChange={(e) => setTxtMessage(e.target.value)}
+                  value={TxtMessage}
                   id="styleBorderTextMessage"
                   className="w-[19.76vw] bg-[#ffffff15] resize-none  h-[2.19vw] mt-[0.36vw] outline-none "
                 />

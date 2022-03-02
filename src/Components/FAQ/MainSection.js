@@ -77,7 +77,7 @@ const MainSection = () => {
                     className={` w-[42vw] h-[3.66vw] bottom-2 cursor-pointer flex justify-center mr-[0px]  rounded-lg text-[0.87vw] mt-[1.46vw] 
                   ${item.isOpen === true ? "w-[42vw] h-[17.56vw] bottom-[0.14vw] bg-[#ebe9e942] rounded-lg text-[0.87vw] mt-[1.46vw] mr-[0px]  transition-all duration-[200ms] "
                         : "w-[42vw] h-[4.02vw] bottom-[0.14vw] bg-[#ebe9e942]  rounded-[0.58vw] text-[0.87vw] mt-[1.46vw] mr-[0px] transition-all duration-[200ms]"} `}>
-                    <div className={`${item.isOpen === true ? "w-[42vw] h-[3.66vw] flex flex-col justify-between items-center" : "w-[39.53vw] flex-col h-[17.56vw] flex justify-between items-centr"} `}>
+                    <div className={`${item.isOpen === true ? "w-[42vw] h-[3.66vw] flex flex-col justify-between items-center" : "w-[39.53vw] flex-col  flex justify-between items-centr"} `}>
                       <div className={`${item.isOpen === true ? " flex flex-col items-center pr-[0.73vw] w-[42vw] border-[0.20vw] h-[17.56vw] border-[#00693B] rounded-lg" : " flex flex-col items-center pr-[0.73vw]"} `}>
                         <div className="flex justify-between w-[37.33vw]  my-[0.73vw]">
                           <div className="flex items-center  ">
@@ -106,13 +106,14 @@ const MainSection = () => {
             databaseFaq1.filter((item) => item.col === 2).map((item, i) => {
               return (
                 <section
-                  onClick={() => handleDrop2(item, i)}
+                  className=""
                   key={i}>
                   <div
+                    onClick={() => handleDrop2(item, i)}
                     className={` w-[42vw] h-[3.66vw] bottom-2 flex cursor-pointer justify-center mr-[0px]  rounded-lg text-[0.87vw] mt-[1.46vw] 
                   ${item.isOpen === true ? "w-[42vw] h-[17.56vw] bottom-[0.14vw] bg-[#ebe9e942] rounded-lg text-[0.87vw] mt-[1.46vw] mr-[0px]  transition-all duration-[200ms] "
                         : "w-[42vw] h-[4.02vw] bottom-[0.14vw] bg-[#ebe9e942]  rounded-[0.58vw] text-[0.87vw] mt-[1.46vw] mr-[0px] transition-all duration-[200ms]"} `}>
-                    <div className={`${item.isOpen === true ? "w-[42vw] h-[3.66vw] flex flex-col justify-between items-center" : "w-[39.53vw] flex-col h-[17.56vw] flex justify-between items-centr"} `}>
+                    <div className={`${item.isOpen === true ? "w-[42vw]  h-[3.66vw] flex flex-col justify-between items-center" : "w-[39.53vw] flex-col flex justify-between items-centr"} `}>
                       <div className={`${item.isOpen === true ? " flex flex-col items-center pr-[0.73vw] w-[42vw] border-[0.20vw] h-[17.56vw] border-[#00693B] rounded-lg" : " flex flex-col items-center pr-[0.73vw]"} `}>
                         <div className="flex justify-between w-[37.33vw]  my-[0.73vw]">
                           <div className="flex items-center  ">

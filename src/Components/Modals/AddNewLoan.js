@@ -21,7 +21,64 @@ export default ({ ModalNewLoan, setModalNewLoan }) => {
   const [styleBorderRequestDescription, setstyleBorderRequestDescription] = useState(false)
   const [dropNotification, setDreopNotification] = useState(false)
   const [dropCategoriesLoan, setDreopCategoriesLoan] = useState(false)
+  const [User, setUser] = useState("رها تمدن")
+  const [requestDescription, setrequestDescription] = useState("سلام من درخواست وام کمک هزینه به مبلغ 30.000.000 تومان دارم . ")
+  const [LoanAmount, setLoanAmount] = useState("30000000")
+  const [Installment, setInstallment] = useState("12")
+  const [inerHtmlElementDrop, setinerHtmlElementDrop] = useState({
+    valueDrop: "اول هر ماه"
+  })
+  const [valueDrop, setvalueDrop] = useState([
+    {
+      valueDrop: "اول هر ماه"
+    },
+    {
+      valueDrop: "آخر هر ماه"
+    },
+    {
+      valueDrop: "25 هر ماه"
+    },
+  ])
+  const GetValueDrop = (item) => {
+    setinerHtmlElementDrop(item)
+  }
 
+  const [inerHtmlElementDropCategoriesInstallment, setinerHtmlElementDropCategoriesInstallment] = useState({
+    valueDrop: " کمک هزینه خرید جهیزیه "
+  })
+  const [valueDropCategoriesInstallment, setvalueDropCategoriesInstallment] = useState([
+    {
+      valueDrop: " کمک هزینه خرید جهیزیه "
+    },
+    {
+      valueDrop: " کمک هزینه خرید مسکن "
+    },
+    {
+      valueDrop: " کمک هزینه خرید ماشین "
+    },
+  ])
+  const GetValueDropCategoriesInstallment = (item) => {
+    setinerHtmlElementDropCategoriesInstallment(item)
+  }
+
+
+  const [inerHtmlElementvalueDropNotification, setinerHtmlElementvalueDropNotification] = useState({
+    valueDrop: " ارسال پیامک به شماره 09015588665 "
+  })
+  const [valueDropNotification, setvalueDropNotification] = useState([
+    {
+      valueDrop: " ارسال پیامک به شماره 09125544158 "
+    },
+    {
+      valueDrop: " ارسال پیامک به شماره 09015588665 "
+    },
+    {
+      valueDrop: " ارسال پیامک به شماره 09352255442 "
+    },
+  ])
+  const GetvalueDropNotification = (item) => {
+    setinerHtmlElementvalueDropNotification(item)
+  }
   return (
     <>
       <section
@@ -73,7 +130,8 @@ export default ({ ModalNewLoan, setModalNewLoan }) => {
                     src={imageProfile}
                   />
                   <input
-                    value={"رها تمدن"}
+                    onChange={(e) => setUser(e.target.value)}
+                    value={User}
                     id="ProflileName"
                     className="w-[19.76vw] bg-[#ffffff15]  h-[2.19vw] mt-[0.36vw] mr-[.4vw] pr-[.3vw] outline-none "
                   />
@@ -107,11 +165,16 @@ export default ({ ModalNewLoan, setModalNewLoan }) => {
                     <p className="pl-[.8vw]">26.780.000 تومان</p>
                   </div>
                 </div>
-                <input
-                  value={"30.000.000 تومان"}
-                  id="Loanamount"
-                  className="w-[19.76vw] bg-[#ffffff15]  h-[2.19vw] mt-[0.36vw] outline-none "
-                />
+                <div className="flex items-center">
+                  <input
+                    type="number"
+                    onChange={(e) => setLoanAmount(e.target.value)}
+                    value={LoanAmount}
+                    id="Loanamount"
+                    className="bg-[#ffffff15] w-[4.5vw] mb-[.5vw]  h-[2.19vw] mt-[0.36vw] outline-none "
+                  />
+                  <p>تومان</p>
+                </div>
               </section>
               <section
                 onClick={() =>
@@ -135,11 +198,16 @@ export default ({ ModalNewLoan, setModalNewLoan }) => {
                   <Loanamount />
                   <p className="pt-[.2vw]"> تعداد اقساط </p>
                 </label>
-                <input
-                  value={"12 قسط"}
-                  id="Numberofinstallments"
-                  className="w-[19.76vw] bg-[#ffffff15]  h-[2.19vw] pr-[.3vw] mt-[0.36vw] outline-none "
-                />
+                <div className="flex items-center">
+                  <input
+                    type="number"
+                    onChange={(e) => setInstallment(e.target.value)}
+                    value={Installment}
+                    id="Numberofinstallments"
+                    className="w-[1.5vw] bg-[#ffffff15] mb-[.5vw]  h-[2.19vw] pr-[.3vw] mt-[0.36vw] outline-none "
+                  />
+                  <p>ماه</p>
+                </div>
               </section>
               <section
                 onClick={() =>
@@ -166,16 +234,24 @@ export default ({ ModalNewLoan, setModalNewLoan }) => {
                   </div>
                 </label>
                 <div className="w-[19vw] items-center  flex justify-between mt-[1.098vw]">
-                  <p>اول هر ماه</p>
+                  <p>{inerHtmlElementDrop.valueDrop}</p>
                   <div
                     onClick={() => setDreop(!drop)}
                     className={`cursor-pointer relative`}>
-                    <Drop />
-                    <div className={`w-[7.320vw] absolute left-[- 0.732vw] h-[7.320vw] mt-[0.585vw] rounded-lg bg-[#fffffff5] 
-                         ${drop ? "w-[7.320vw] absolute left-[-0.732vw] cursor-pointer h-[7.320vw] rounded-[0.585vw] " : "hidden"}`}>
-                      <p className="w-[7.320vw] h-[2.17vw] hover:bg-[#00000018] rounded-lg my-[0.366vw] flex items-center justify-center "> اول هر ماه </p>
-                      <p className="w-[7.320vw] h-[2.17vw] text-center hover:bg-[#00000018] rounded-[0.585vw] flex items-center justify-center ">اول هر ماه </p>
-                      <p className="w-[7.320vw] h-[2.17vw] text-center hover:bg-[#00000018] rounded-[0.585vw] my-[0.366vw] flex items-center justify-center ">اول هر ماه </p>
+                    <div className="mb-[.5vw]">
+                      <Drop />
+                    </div>
+                    <div className={`w-[8.vw] absolute left-[- 0.732vw]  h-[8vw] mt-[0.585vw] rounded-lg z-10  bg-[#fff] drop-shadow-2xl
+                      ${drop ? "w-[8vw] absolute left-[-0.732vw] h-[7.320vw] rounded-[0.585vw] " : "hidden"}`}>
+                      {
+                        valueDrop.map(item => {
+                          return <div>
+                            <p
+                              onClick={() => GetValueDrop(item)}
+                              className="w-[8vw] h-[2.17vw] hover:bg-[#00000044] rounded-lg my-[0.366vw] flex items-center justify-center ">{item.valueDrop}</p>
+                          </div>
+                        })
+                      }
                     </div>
                   </div>
                 </div>
@@ -203,16 +279,24 @@ export default ({ ModalNewLoan, setModalNewLoan }) => {
                   <p className="pt-[.2vw]">نوع وام</p>
                 </label>
                 <div className="w-[19vw] items-center  flex justify-between mt-[1.098vw]">
-                  <p> کمک هزینه </p>
+                  <p>{inerHtmlElementDropCategoriesInstallment.valueDrop}</p>
                   <div
                     onClick={() => setDreopCategoriesLoan(!dropCategoriesLoan)}
                     className={`cursor-pointer relative`}>
-                    <Drop />
-                    <div className={`w-[7.320vw] absolute left-[- 0.732vw] h-[7.320vw] mt-[0.585vw] rounded-lg bg-[#ffffff] 
-                         ${dropCategoriesLoan ? "w-[7.320vw] absolute left-[-0.732vw] h-[7.320vw] rounded-[0.585vw] " : "hidden"}`}>
-                      <p className="w-[7.320vw] h-[2.17vw] hover:bg-[#00000018] rounded-lg my-[0.366vw] flex items-center justify-center ">کمک هزینه</p>
-                      <p className="w-[7.320vw] h-[2.17vw] text-center hover:bg-[#00000018] rounded-[0.585vw] flex items-center justify-center ">کمک هزینه </p>
-                      <p className="w-[7.320vw] h-[2.17vw] text-center hover:bg-[#00000018] rounded-[0.585vw] my-[0.366vw] flex items-center justify-center ">کمک هزینه</p>
+                    <div className="mb-[.5vw]">
+                      <Drop />
+                    </div>
+                    <div className={`w-[12.vw] absolute top-0 left-[- 0.732vw] h-[8vw] mt-[0.585vw] rounded-lg z-10  bg-[#fff] drop-shadow-2xl
+                      ${dropCategoriesLoan ? "w-[12vw] absolute left-[-0.732vw] h-[7.320vw] rounded-[0.585vw] " : "hidden"}`}>
+                      {
+                        valueDropCategoriesInstallment.map(item => {
+                          return <div>
+                            <p
+                              onClick={() => GetValueDropCategoriesInstallment(item)}
+                              className="w-[12vw] h-[2.17vw] hover:bg-[#00000044] rounded-lg my-[0.366vw] flex items-center justify-center ">{item.valueDrop}</p>
+                          </div>
+                        })
+                      }
                     </div>
                   </div>
                 </div>
@@ -240,16 +324,24 @@ export default ({ ModalNewLoan, setModalNewLoan }) => {
                   <p className="pt-[.2vw]"> ارسال یادآوری به صورت</p>
                 </label>
                 <div className="w-[19vw] items-center  flex justify-between mt-[1.098vw]">
-                  <p>ارسال پیامک به شماره09120411848</p>
+                  <p>{inerHtmlElementvalueDropNotification.valueDrop}</p>
                   <div
                     onClick={() => setDreopNotification(!dropNotification)}
                     className={`cursor-pointer relative`}>
-                    <Drop />
-                    <div className={`w-[7.320vw] absolute left-[- 0.732vw] h-[7.320vw] mt-[0.585vw] rounded-lg bg-[#ffffff] 
-                         ${dropNotification ? "w-[7.320vw] absolute left-[-0.732vw] h-[7.320vw] rounded-[0.585vw] " : "hidden"}`}>
-                      <p className="w-[7.320vw] h-[2.17vw] hover:bg-[#00000018] rounded-lg my-[0.366vw] flex items-center justify-center ">پیامک</p>
-                      <p className="w-[7.320vw] h-[2.17vw] text-center hover:bg-[#00000018] rounded-[0.585vw] flex items-center justify-center ">پیامک </p>
-                      <p className="w-[7.320vw] h-[2.17vw] text-center hover:bg-[#00000018] rounded-[0.585vw] my-[0.366vw] flex items-center justify-center ">پیامک</p>
+                    <div className="mb-[.5vw]">
+                      <Drop />
+                    </div>
+                    <div className={`w-[16vw] absolute top-0 left-[- 0.732vw] h-[8vw] mt-[0.585vw] rounded-lg z-10  bg-[#fff] drop-shadow-2xl
+                      ${dropNotification ? "w-[16vw] absolute left-[-0.732vw] h-[7.320vw] rounded-[0.585vw] " : "hidden"}`}>
+                      {
+                        valueDropNotification.map(item => {
+                          return <div>
+                            <p
+                              onClick={() => GetvalueDropNotification(item)}
+                              className="w-[16vw] h-[2.17vw] hover:bg-[#00000044] rounded-lg my-[0.366vw] flex items-center justify-center ">{item.valueDrop}</p>
+                          </div>
+                        })
+                      }
                     </div>
                   </div>
                 </div>
@@ -277,7 +369,8 @@ export default ({ ModalNewLoan, setModalNewLoan }) => {
                   <p className="pt-[0.366vw]"> توضیحات درخواست</p>
                 </label>
                 <textarea
-                  value={"سلام من درخواست وام کمک هزینه به مبلغ 30.000.000 تومان دارم . "}
+                  onChange={(e) => setrequestDescription(e.target.value)}
+                  value={requestDescription}
                   id="phone"
                   className="w-[19.76vw] bg-[#ffffff15] resize-none h-[4.19vw] mt-[1vw] outline-none pr-[0.732vw]"
                 />
